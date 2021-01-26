@@ -1,4 +1,17 @@
+const express = require('express');
+const bodyParser = require('body-parser');
+const path = require('path');
 const mariadb = require('mariadb');
+
+const app = express();
+
+app.get('/', (req, res) => {res.send('Index')});
+
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, console.log(`Server started on ${PORT}`));
+
+
 const pool = mariadb.createPool({
      host: '127.0.0.1',
      port: '3306',
@@ -7,6 +20,8 @@ const pool = mariadb.createPool({
      password: '',
      connectionLimit: 5
 });
+
+
 async function asyncFunction() {
   let conn;
   try {
