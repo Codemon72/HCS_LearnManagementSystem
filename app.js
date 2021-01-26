@@ -3,13 +3,27 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const mariadb = require('mariadb');
 
+const { Sequelize } = require('sequelize');
+
+const db = new Sequelize('codingschool', 'clemens', '', {
+  host: '127.0.0.1',
+  dialect: 'mariadb'
+});
+
+// Test DB (with sequelize)
+db.authenticate()
+  .then(() => console.log('Database connected...'))
+  .catch(err => console.log('Error: ' + err))
+
+
 const app = express();
 
-app.get('/', (req, res) => {res.send('Index')});
+app.get('/', (req, res) => {res.send('Baby Yoda')});
 
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, console.log(`Server started on ${PORT}`));
+
 
 
 const pool = mariadb.createPool({
@@ -53,7 +67,7 @@ async function logAllCourses () {
 
 // asyncFunction();
 
-logAllCourses();
+// logAllCourses();
 
 
 // https://github.com/mariadb-corporation/mariadb-connector-nodejs/blob/master/documentation/promise-api.md#array-result-sets
