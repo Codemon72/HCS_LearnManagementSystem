@@ -13,7 +13,7 @@ db.authenticate()
 
 const app = express();
 
-app.get('/', (req, res) => {res.send('Baby Yoda')});
+app.get('/', (req, res) => {res.send('INDEX')});
 
 // Courses Routes
 app.use('/courses', require('./routes/courses'));

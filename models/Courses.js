@@ -22,7 +22,10 @@ const Courses = db.define('Courses', {
   teacher_id: {
     type: DataTypes.INTEGER
     // TODO: foreign key
-  }
-})
+  },
+  timestamps: false,
+  createdAt: false,
+  updatedAt: false
+});
 
 module.exports = Courses;
