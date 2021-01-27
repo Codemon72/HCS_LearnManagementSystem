@@ -28,6 +28,7 @@ router.get('/add', (req, res) => {
 
   // Insert into table
   Courses.create({
+    // instead of 'name: name' with ES6 we can go like this:
     name, 
     hours, 
     start_date, 
