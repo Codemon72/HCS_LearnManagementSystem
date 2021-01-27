@@ -1,0 +1,24 @@
+<section id="gigs" class="container">
+  <h1>All Courses</h1>
+
+  {{#each courses}}
+  <div class="gig">
+    <h3>{{dataValues.name}}</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero aspernatur tempora nisi quibusdam doloribus
+      adipisci cumque quidem perferendis. Iusto, natus!</p>
+    <ul>
+      <li>start date: {{dataValues.start_date}}</li>
+      <li>end date: {{dataValues.end_date}}</li>
+      <li>Hours total: {{dataValues.hours}}</li>
+      <li><a href="#" class="btn btn-reverse">Apply Now</a></li>
+    </ul>
+    <div class="tech">
+      <small>Technologies Needed: <span>react, redux, javascript</span></small>
+    </div>
+  </div>
+  {{else}}
+  <p>There are no courses in relation to your search.</p>
+  {{/each}}
+
+
+</section>

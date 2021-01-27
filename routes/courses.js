@@ -8,8 +8,12 @@ router.get('/', (req, res) =>
   // res.send('all good so far 🏄‍♂️🥋')
   Courses.findAll()
     .then((courses) => {
-      console.log(courses);
-      res.sendStatus(200);
+      // console.log(courses);
+      // res.sendStatus(200);
+      res.render('courses', {
+        // courses: courses
+        courses: courses
+      })
     })
     .catch((err) => console.log(err))
 );
