@@ -1,8 +1,9 @@
-# Experiment / Projekt für Hamburg Coding School
+# Project for Hamburg Coding School
 
 ## Tech-Stack
-- lokale Datenbank mit MariaDB
+- local Database with MariaDB
   - GUI: Sequel Ace
+  
 - Node.js
   - Express
   - Sequelize (ORM)
