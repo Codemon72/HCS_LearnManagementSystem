@@ -18,8 +18,11 @@ router.get('/', (req, res) =>
     .catch((err) => console.log(err))
 );
 
+// Display form to add a course
+router.get('/add', (req, res) => res.render('add'));
+
 // Add a course
-router.get('/add', (req, res) => {
+router.post('/add', (req, res) => {
   const data = {
     name: 'Vue.js',
     hours: 24,
