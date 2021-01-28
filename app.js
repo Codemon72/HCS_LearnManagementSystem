@@ -20,7 +20,8 @@ app.set('view engine', 'handlebars');
 // Set Static Folder
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', (req, res) => {res.send('INDEX')});
+// Index Route
+app.get('/', (req, res) => {res.render('index', { layout: 'landing' })});
 
 // Courses Routes
 app.use('/courses', require('./routes/courses'));
