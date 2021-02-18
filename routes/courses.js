@@ -63,7 +63,7 @@ router.post('/add', (req, res) => {
       end_date, 
       teacher_id
     })
-    .then(blib => res.redirect('/courses'))
+    .then(course => res.redirect('/courses'))
     .catch(err => console.log(err));
   }
 
@@ -79,6 +79,16 @@ router.get('/search', (req, res) => {
 
 
 module.exports = router;
+
+
+
+
+
+
+
+
+
+
 
 
 // Hacky way to quickly insert a course to the database:

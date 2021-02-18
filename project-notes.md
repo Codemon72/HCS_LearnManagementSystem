@@ -11,3 +11,9 @@ To start it in the terminal:
 - `mariadb`
 To stop:
 - `\q` or CTRL + C
+
+#### Database UI: Sequel Ace
+Name: localhost
+Host: 127.0.0.1
+Username: clemens
+Port: 3306
