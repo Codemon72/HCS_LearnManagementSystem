@@ -2,17 +2,17 @@ const express = require("express");
 const router = express.Router();
 const db = require("../config/database");
 const Courses = require("../models/Courses");
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
 
 // Get all courses
 router.get('/', (req, res) =>
-  // res.send('all good so far 🏄‍♂️🥋')
   Courses.findAll()
     .then((courses) => {
-      // console.log(courses);
       // res.sendStatus(200);
       res.render('courses', {
         // courses: courses
-        courses: courses
+        courses
       })
     })
     .catch((err) => console.log(err))
@@ -68,6 +68,15 @@ router.post('/add', (req, res) => {
   }
 
 });
+
+// Search for Courses
+router.get('/search', (req, res) => {
+  const {term} = req.query;
+  Courses.findAll({ where: { name: { [Op.like]: '%' + term + '%' } } })
+    .then( courses => res.render('courses', { courses }))
+    .catch(err => console.log('Error: ' + err))
+})
+
 
 module.exports = router;
 
