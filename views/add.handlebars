@@ -13,6 +13,7 @@
           class="input-box"
           name="name" 
           id="name">
+          <option value="" selected disabled hidden>Please select</option>
           <option value="HTML & CSS">HTML & CSS</option>
           <option value="Learn To Code">Learn To Code</option>
           <option value="JavaScript For Web">JavaScript For Web</option>
@@ -48,19 +49,28 @@
         type="date"
         name="end_date" 
         id="end_date" 
-        class="input-box" 
-        placeholder="format like: 2021-05-05"
-        value={{end_date}}>
+        class="input-box">
       </div>
       <div class="input-group">
         <label for="teacher_id">Teacher ID</label>
-        <input 
+        <select 
         type="number"
         name="teacher_id" 
         id="teacher_id" 
-        class="input-box" 
-        placeholder="number"
-        value={{teacher_id}}>
+        class="input-box">
+          <option value="" selected disabled hidden>Please select</option>
+          <option value="2">Alexander Löhn</option>
+          <option value="5">Ansgar Mertens</option>
+          <option value="11">Benjamin Rabe</option>
+          <option value="7">Christoph Eicke</option>
+          <option value="1">Helder Pereira</option>
+          <option value="4">Jonas Reitmann</option>
+          <option value="8">Teresa Holfeld</option>
+          <option value="9">Thomas Hedeler</option>
+          <option value="10">Mary Vokicic</option>
+          <option value="3">Paul Anton</option>
+          <option value="6">Paul Mölders</option>
+        </select>
       </div>
       <input type="submit" value="Add Course" class="btn btn-reverse">
     </form>
