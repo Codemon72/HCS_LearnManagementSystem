@@ -163,7 +163,7 @@ input[type="search"] {
   flex-basis: 600px;
 }
 
-/* Gigs */
+/* Courses */
 .gig {
   background: var(--bg-color);
   border-bottom: 4px solid var(--primary-color);
@@ -221,14 +221,23 @@ label {
   display: block;
   margin-bottom: 0.5rem;
 }
-
+.input-group {
+  position: relative;
+}
 .input-box {
   padding: 0.5rem;
   font-size: 18px;
   width: 100%;
-  margin-bottom: 1.2rem;
+  margin-bottom: 2rem;
 }
-
+.error-message {
+  /* display: none; */
+  position: absolute;
+  color: red;
+  font-size: .85rem;
+  bottom: 10px;
+  left: 10px;
+}
 /* Tablets */
 @media (max-width: 800px) {
   .container {
