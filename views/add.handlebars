@@ -9,14 +9,18 @@
     <form action="/courses/add" method="POST">
       <div class="input-group">
         <label for="name">Course Name</label>
-        <input 
-        type="text" 
-        name="name" 
-        id="name" 
-        class="input-box"
-        placeholder="eg. HTML & CSS, Learn To Code, JavaScript For Web, React.js, ... " 
-        maxlength="100"
-        value={{name}}>
+        <select 
+          class="input-box"
+          name="name" 
+          id="name">
+          <option value="HTML & CSS">HTML & CSS</option>
+          <option value="Learn To Code">Learn To Code</option>
+          <option value="JavaScript For Web">JavaScript For Web</option>
+          <option value="React.js">React.js</option>
+          <option value="Node.js">Node.js</option>
+          <option value="Vue.js">Vue.js</option>
+
+        </select>
       </div>
       <div class="input-group">
         <label for="hours">Hours Total</label>
