@@ -27,21 +27,21 @@ router.post("/add", (req, res) => {
   let errors = [];
 
   // Validate Fields
-  // if (!name) {
-  //   errors.push({ text: "Please add the course name" });
-  // }
-  // if (!hours) {
-  //   errors.push({ text: "Please add the number of hours" });
-  // }
-  // if (!start_date) {
-  //   errors.push({ text: "Please add the start date of the course" });
-  // }
-  // if (!end_date) {
-  //   errors.push({ text: "Please add the end date of the course" });
-  // }
-  // if (!teacher_id) {
-  //   errors.push({ text: "Please add the teacher id" });
-  // }
+  if (!name) {
+    errors.push({ text: "Please add the course name" });
+  }
+  if (!hours) {
+    errors.push({ text: "Please add the number of hours" });
+  }
+  if (!start_date) {
+    errors.push({ text: "Please add the start date of the course" });
+  }
+  if (!end_date) {
+    errors.push({ text: "Please add the end date of the course" });
+  }
+  if (!teacher_id) {
+    errors.push({ text: "Please add the teacher id" });
+  }
 
   // Check for errors
   if (errors.length > 0) {
