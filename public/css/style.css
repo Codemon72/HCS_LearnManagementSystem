@@ -232,9 +232,12 @@ label {
 }
 .error-message {
   position: absolute;
-  color: red;
+  background-color: white;
+  border-radius: 2px;
+  padding: 2px;
+  color: rgb(158, 5, 5);
   font-size: .85rem;
-  bottom: 10px;
+  bottom: 8px;
   left: 10px;
 }
 /* Tablets */
