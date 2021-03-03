@@ -6,7 +6,7 @@
       <p>{{text}}</p>
     </div>
     {{/each}}
-    <form action="/courses/add" method="POST">
+    <form action="/courses/add" method="POST" name="add-form">
       <div class="input-group">
         <label for="name">Course Name</label>
         <select 
@@ -72,7 +72,7 @@
           <option value="6">Paul Mölders</option>
         </select>
       </div>
-      <input type="submit" value="Add Course" class="btn btn-reverse">
+      <input type="submit" value="Add Course" class="btn btn-reverse" id="AddSubmit" disabled>
     </form>
   </div>
 </section>

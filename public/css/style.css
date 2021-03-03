@@ -216,6 +216,10 @@ input[type="search"] {
   text-align: center;
   font-size: 18px;
 }
+.form-wrap .btn:disabled {
+  background-color: gray;
+  color: lightgray;
+}
 
 label {
   display: block;
