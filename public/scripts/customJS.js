@@ -28,3 +28,17 @@ hoursField.addEventListener('input', () => {
     errorText.remove()
   }
 });
+
+const start_dateField = document.getElementById('start_date');
+
+start_dateField.addEventListener('blur', () => {
+  if (start_dateField.value === ''){
+    start_dateField.insertAdjacentHTML("afterend", "<span class='error-message'>Please select the start date for the course.</span>")
+  }
+});
+start_dateField.addEventListener('input', () => {
+  const errorText = document.querySelector('#start_date ~ span.error-message');
+  if (start_dateField.value !== '' && errorText) {
+    errorText.remove()
+  }
+});
