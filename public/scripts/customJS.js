@@ -14,8 +14,17 @@ nameField.addEventListener('change', () => {
 });
 
 const hoursField = document.getElementById('hours');
+
 hoursField.addEventListener('blur', () => {
   if (hoursField.value === ''){
     hoursField.insertAdjacentHTML("afterend", "<span class='error-message'>Please enter the sum of hours of the course.</span>");
+  }
+});
+
+hoursField.addEventListener('input', () => {
+  const errorText = document.querySelector('#hours ~ span.error-message');
+  // if input is valid remove error message
+  if (hoursField.value !== "" && errorText){
+    errorText.remove()
   }
 });
