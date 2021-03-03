@@ -28,7 +28,7 @@ router.post("/add", (req, res) => {
 
   // Validate Fields
   if (!name) {
-    errors.push({ text: "Please add the course name" });
+    errors.push({ text: "Please select the course name" });
   }
   if (!hours) {
     errors.push({ text: "Please add the number of hours" });
@@ -40,7 +40,7 @@ router.post("/add", (req, res) => {
     errors.push({ text: "Please add the end date of the course" });
   }
   if (!teacher_id) {
-    errors.push({ text: "Please add the teacher id" });
+    errors.push({ text: "Please select a teacher" });
   }
 
   // Check for errors
