@@ -1,5 +1,6 @@
 // Form Validation
 const nameField = document.getElementById('name');
+
 nameField.addEventListener('blur', () => {
   if (nameField.options[nameField.selectedIndex].value === ""){
     nameField.insertAdjacentHTML('afterend', '<span class="error-message">Please select a course name from the list.</span>');
@@ -47,12 +48,29 @@ const end_dateField = document.getElementById('end_date');
 
 end_dateField.addEventListener('blur', () => {
   if (end_dateField.value === ''){
-    end_dateField.insertAdjacentHTML("afterend", "<span class='error-message'>Please select the start date for the course.</span>")
+    end_dateField.insertAdjacentHTML("afterend", "<span class='error-message'>Please select the end date for the course.</span>")
   }
 });
+
 end_dateField.addEventListener('input', () => {
   const errorText = document.querySelector('#end_date ~ span.error-message');
   if (end_dateField.value !== '' && errorText) {
+    errorText.remove()
+  }
+});
+
+const teacher_idField = document.getElementById('teacher_id');
+
+teacher_idField.addEventListener('blur', () => {
+  if (teacher_idField.options[teacher_idField.selectedIndex].value === ""){
+    teacher_idField.insertAdjacentHTML('afterend', '<span class="error-message">Please select a course teacher_id from the list.</span>');
+  }
+});
+
+teacher_idField.addEventListener('change', () => {
+  const errorText = document.querySelector('#teacher_id ~ span.error-message');
+  // if input is valid remove error message
+  if (teacher_idField.options[teacher_idField.selectedIndex].value !== "" && errorText){
     errorText.remove()
   }
 });
