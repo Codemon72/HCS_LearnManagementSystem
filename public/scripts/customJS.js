@@ -5,7 +5,9 @@ console.log('custom JS file connected');
 // }
 
 const nameField = document.getElementById('name');
-console.log(nameField)
+nameField.addEventListener('blur', () => {
+  console.log('Success!')
+})
 
 const myFunction = () => {
   alert("Input field lost focus.");
