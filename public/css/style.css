@@ -231,7 +231,6 @@ label {
   margin-bottom: 2rem;
 }
 .error-message {
-  display: none;
   position: absolute;
   color: red;
   font-size: .85rem;
