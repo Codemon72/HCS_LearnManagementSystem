@@ -5,3 +5,9 @@ nameField.addEventListener("blur", () => {
   }
 });
 
+const hoursField = document.getElementById("hours");
+hoursField.addEventListener("blur", () => {
+  if (hoursField.value === ""){
+    hoursField.insertAdjacentHTML("afterend", "<span class='error-message'>Please enter the sum of hours of the course.</span>");
+  }
+});
