@@ -42,3 +42,17 @@ start_dateField.addEventListener('input', () => {
     errorText.remove()
   }
 });
+
+const end_dateField = document.getElementById('end_date');
+
+end_dateField.addEventListener('blur', () => {
+  if (end_dateField.value === ''){
+    end_dateField.insertAdjacentHTML("afterend", "<span class='error-message'>Please select the start date for the course.</span>")
+  }
+});
+end_dateField.addEventListener('input', () => {
+  const errorText = document.querySelector('#end_date ~ span.error-message');
+  if (end_dateField.value !== '' && errorText) {
+    errorText.remove()
+  }
+});
