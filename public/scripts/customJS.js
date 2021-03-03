@@ -6,9 +6,11 @@ nameField.addEventListener('blur', () => {
   }
 });
 nameField.addEventListener('change', () => {
-  console.log('success!')
-  // if valid input add check mark and disappear error message
-  // if invalid input && error-message exists -> do nothing
+  const errorText = document.querySelector('#name ~ span.error-message');
+  // if input is valid remove error message
+  if (nameField.options[nameField.selectedIndex].value !== "" && errorText){
+    errorText.remove()
+  }
 });
 
 const hoursField = document.getElementById('hours');
