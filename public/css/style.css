@@ -215,10 +215,12 @@ input[type="search"] {
   width: 100%;
   text-align: center;
   font-size: 18px;
+  cursor: pointer;
 }
 .form-wrap .btn:disabled {
   background-color: gray;
   color: lightgray;
+  cursor: default;
 }
 
 label {
