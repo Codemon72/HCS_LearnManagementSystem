@@ -13,6 +13,8 @@ const Teachers = db.define('Teachers', {
   email: {
     type: DataTypes.STRING(40)
   }
+}, {
+  freezeTableName: true
 });
 
 module.exports = Teachers;

@@ -32,6 +32,9 @@ app.use('/courses', require('./routes/courses'));
 // Teachers Routes
 app.use('/teachers', require('./routes/teachers'));
 
+// Courses & Teachers Routes
+app.use('/course_and_teachers', require('./routes/courses_and_teachers'));
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, console.log(`Server started on Port: ${PORT}`));

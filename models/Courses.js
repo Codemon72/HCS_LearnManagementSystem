@@ -1,5 +1,6 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const db = require('../config/database');
+const Teachers = require('./Teachers');
 
 const Courses = db.define('Courses', {
   course_id: {
@@ -20,9 +21,14 @@ const Courses = db.define('Courses', {
     type: DataTypes.DATEONLY
   },
   teacher_id: {
-    type: DataTypes.INTEGER
-    // TODO: foreign key
+    type: DataTypes.INTEGER,
+    references: {
+      model: Teachers,
+      key: 'teacher_id'
+    }
   }
+}, {
+  freezeTableName: true
 });
 
 module.exports = Courses;

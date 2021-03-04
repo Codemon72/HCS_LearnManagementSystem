@@ -3,7 +3,12 @@ const router = express.Router();
 const Courses = require("../models/Courses");
 const Teachers = require("../models/Teachers");
 
-// Get all teachers
+// SELECT c.*, t.name 
+// FROM courses AS c
+// JOIN teachers AS t
+// ON t.teacher_id = c.teacher_id;
+
+// Get all everything from courses and teachers names
 router.get("/", (req, res) =>
   Teachers.findAll()
     .then((teachers) => {
