@@ -8,7 +8,8 @@ const Teachers = require("../models/Teachers");
 // JOIN teachers AS t
 // ON t.teacher_id = c.teacher_id;
 
-// Get all everything from courses and teachers names
+// Get everything from courses AND teachers names
+
 router.get("/", (req, res) =>
   Teachers.findAll()
     .then((teachers) => {
