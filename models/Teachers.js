@@ -1,5 +1,6 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const db = require('../config/database');
+const Courses = require('./Courses');
 
 const Teachers = db.define('Teachers', {
   teacher_id: {
@@ -16,5 +17,13 @@ const Teachers = db.define('Teachers', {
 }, {
   freezeTableName: true
 });
+
+// From the Docs: 
+// Teachers.hasMany(Courses);
+
+// From Thomas Smith's Tutorials:
+Teachers.associate = (models) => {
+  Teachers.hasMany(models.Courses)
+}
 
 module.exports = Teachers;

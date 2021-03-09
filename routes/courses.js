@@ -2,20 +2,24 @@ const express = require("express");
 const router = express.Router();
 const db = require("../config/database");
 const Courses = require("../models/Courses");
+const Teachers = require("../models/Teachers");
 const {Sequelize, Op} = require("sequelize");
 
 
 // Get all courses
 router.get("/", (req, res) =>
-  Courses.findAll()
+  Courses.findAll({
+    include: [Teachers]
+  })
     .then((courses) => {
       // res.sendStatus(200);
+      // console.log(courses);
       res.render("courses", {
         // courses: courses
         courses,
       });
     })
-    .catch((err) => console.log(err))
+    .catch((err) => console.log(`Error: ${err}`))
 );
 
 // Display form to add a course
