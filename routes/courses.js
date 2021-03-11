@@ -3,13 +3,12 @@ const router = express.Router();
 const db = require("../config/database");
 const Courses = require("../models/Courses");
 const Teachers = require("../models/Teachers");
-const {Sequelize, Op} = require("sequelize");
-
+const { Sequelize, Op } = require("sequelize");
 
 // Get all courses
 router.get("/", (req, res) =>
   Courses.findAll({
-    include: [Teachers]
+    include: [Teachers],
   })
     .then((courses) => {
       // res.sendStatus(200);
@@ -75,7 +74,8 @@ router.post("/add", (req, res) => {
 // Search for Courses
 router.get("/search", (req, res) => {
   const { term } = req.query;
-  Courses.findAll({ where: { name: { [Op.like]: "%" + term + "%" } } })
+  Courses.findAll(
+    { where: { name: { [Op.like]: "%" + term + "%" } }, include: [Teachers] } )
     .then((courses) => res.render("courses", { courses }))
     .catch((err) => console.log("Error: " + err));
 });
