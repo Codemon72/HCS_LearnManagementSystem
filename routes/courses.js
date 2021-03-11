@@ -12,8 +12,9 @@ router.get("/", (req, res) =>
     include: [Teachers]
   })
     .then((courses) => {
+      // console.log(courses)
       // res.sendStatus(200);
-      // console.log(courses);
+      // console.log(courses[0].dataValues.Teacher.dataValues.name);
       res.render("courses", {
         // courses: courses
         courses,

@@ -32,11 +32,12 @@ const Courses = db.define('Courses', {
 });
 
 // From the Docs: 
-// Courses.hasOne(Teachers);
+Courses.belongsTo(Teachers, {foreignKey: 'teacher_id'});
+// Teachers.hasMany(Courses);
 
 // From Thomas Smith's Tutorials:
-Courses.associate = (models) => {
-  Courses.hasOne(models.Teachers, {foreignKey: 'teacher_id'})
-};
+// Courses.associate = (models) => {
+//   Courses.hasOne(models.Teachers, {foreignKey: 'teacher_id'})
+// };
 
 module.exports = Courses;

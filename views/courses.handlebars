@@ -3,17 +3,17 @@
 
   {{#each courses}}
   <div class="gig">
-    <h3>Course: {{dataValues.name}}</h3>
+    <h3>Course: &nbsp; {{dataValues.name}}</h3>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero aspernatur tempora nisi quibusdam doloribus
       adipisci cumque quidem perferendis. Iusto, natus!</p>
     <ul>
-      <li>start date: {{dataValues.start_date}}</li>
-      <li>end date: {{dataValues.end_date}}</li>
-      <li>Hours total: {{dataValues.hours}}</li>
+      <li>start date: &nbsp; {{dataValues.start_date}}</li>
+      <li>end date: &nbsp; {{dataValues.end_date}}</li>
+      <li>Hours total: &nbsp; {{dataValues.hours}}</li>
       {{!-- <li><a href="#" class="btn btn-reverse">Apply Now</a></li> --}}
     </ul>
     <div class="tech">
-      <span>Teacher:  {{dataValues.teacher_id}}  (ID for now)</span>
+      <span>Teacher: &nbsp; {{dataValues.Teacher.dataValues.name}}</span>
     </div>
   </div>
   {{else}}
