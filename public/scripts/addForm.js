@@ -1,7 +1,5 @@
 // Form Validation
 
-if (document.forms.length > 0){console.log('Form!')}
-
 // if all input elements have received an input the submit button is enabled
 const checkform = () => {
   const f = document.forms['add-form'].elements;
