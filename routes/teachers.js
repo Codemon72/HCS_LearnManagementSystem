@@ -7,7 +7,6 @@ const Teachers = require("../models/Teachers");
 router.get("/", (req, res) =>
   Teachers.findAll()
     .then((teachers) => {
-      // res.sendStatus(200);
       res.send(teachers);
     })
     .catch((err) => console.log(err))

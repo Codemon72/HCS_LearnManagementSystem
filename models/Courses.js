@@ -33,7 +33,7 @@ const Courses = db.define('Courses', {
 
 // From the Docs: 
 Courses.belongsTo(Teachers, {foreignKey: 'teacher_id'});
-// Teachers.hasMany(Courses);
+
 
 // From Thomas Smith's Tutorials:
 // Courses.associate = (models) => {
