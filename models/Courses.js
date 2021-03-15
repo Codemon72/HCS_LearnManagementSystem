@@ -22,6 +22,7 @@ const Courses = db.define('Courses', {
   },
   teacher_id: {
     type: DataTypes.INTEGER,
+    allowNull: true,
     references: {
       model: Teachers,
       key: 'teacher_id'

@@ -74,8 +74,10 @@ router.post("/add", (req, res) => {
 // Search for Courses
 router.get("/search", (req, res) => {
   const { term } = req.query;
-  Courses.findAll(
-    { where: { name: { [Op.like]: "%" + term + "%" } }, include: [Teachers] } )
+  Courses.findAll({
+    where: { name: { [Op.like]: "%" + term + "%" } },
+    include: [Teachers],
+  })
     .then((courses) => res.render("courses", { courses }))
     .catch((err) => console.log("Error: " + err));
 });
