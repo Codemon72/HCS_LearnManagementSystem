@@ -2,8 +2,10 @@
   <h1>All Courses</h1>
 
   {{#each courses}}
-  <div class="gig">
+  <div class="courses">
     <h3>Course: &nbsp; {{dataValues.name}}</h3>
+    <span>{{dataValues.course_id}}</span>
+    <button class="course-delete-btn" onclick="deletelog({{dataValues.course_id}})">X</button>
     <ul>
       <li>start date: &nbsp; {{dataValues.start_date}}</li>
       <li>end date: &nbsp; {{dataValues.end_date}}</li>
@@ -19,3 +21,8 @@
   {{/each}}
 
 </section>
+<script>
+  const deletelog = (id) => {
+    console.log(id)
+  }
+</script>

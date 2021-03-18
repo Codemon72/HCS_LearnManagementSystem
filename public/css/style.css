@@ -163,8 +163,8 @@ input[type="search"] {
   flex-basis: 600px;
 }
 
-/* Courses */
-.gig {
+/* All Courses */
+.courses {
   background: var(--bg-color);
   border-bottom: 4px solid var(--primary-color);
   color: #fff;
@@ -173,18 +173,22 @@ input[type="search"] {
   box-shadow: var(--box-shadow);
 }
 
-.gig ul {
+.courses ul {
   list-style: none;
   display: flex;
 }
 
-.gig li {
+.courses li {
   margin-right: 0.5rem;
   padding: 0.6rem;
 }
 
-.gig .tech span {
+.courses .tech span {
   color: var(--primary-color);
+}
+
+.course-delete-btn {
+  margin-left: 1rem;
 }
 
 /* Form */
