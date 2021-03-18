@@ -4,7 +4,8 @@
   {{#each courses}}
   <div class="courses">
     <h3>Course: &nbsp; {{dataValues.name}}</h3>
-    <span>{{dataValues.course_id}}</span>
+    <span>course_id: &nbsp; {{dataValues.course_id}}</span>
+    <span style="margin-left: 2rem;">Delete Course: </span>
 
     <button class="course-delete-btn" onclick="deletelog({{dataValues.course_id}})">X</button>
 
