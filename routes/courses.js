@@ -43,8 +43,12 @@ router.post("/add", (req, res) => {
 });
 
 // Delete a course
-router.get("/delete", (req, res) => { 
-  res.send("delete!");
+router.get("/delete/:id", (req, res) => { 
+  const requestID = parseInt(req.params.id);
+  Courses.destroy({ where: { course_id: requestID } })
+  // res.send("delete!");
+  .then((course) => res.redirect("/courses"))
+  .catch((err) => console.log(err));
 });
 
 
