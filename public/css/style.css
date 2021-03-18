@@ -190,6 +190,12 @@ input[type="search"] {
 .course-delete-btn {
   margin-left: 1rem;
 }
+.course-delete-btn:hover,
+.course-delete-btn:focus {
+  cursor: pointer;
+  color: red;
+  transform: scale(1.1);
+}
 
 /* Form */
 .form-wrap {
