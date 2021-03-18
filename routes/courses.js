@@ -42,6 +42,12 @@ router.post("/add", (req, res) => {
     .catch((err) => console.log(err));
 });
 
+// Delete a course
+router.get("/delete", (req, res) => { 
+  res.send("delete!");
+});
+
+
 // Search for Courses
 router.get("/search", (req, res) => {
   const { term } = req.query;
