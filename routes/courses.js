@@ -27,48 +27,19 @@ router.get("/add", (req, res) => res.render("add"));
 // Add a course
 router.post("/add", (req, res) => {
   let { name, hours, start_date, end_date, teacher_id } = req.body;
-  let errors = [];
+  if (teacher_id === "null"){teacher_id = null}
 
-  // Validate Fields
-  if (!name) {
-    errors.push({ text: "Please select the course name" });
-  }
-  if (!hours) {
-    errors.push({ text: "Please add the number of hours" });
-  }
-  if (!start_date) {
-    errors.push({ text: "Please add the start date of the course" });
-  }
-  if (!end_date) {
-    errors.push({ text: "Please add the end date of the course" });
-  }
-  if (!teacher_id) {
-    errors.push({ text: "Please select a teacher" });
-  }
-
-  // Check for errors
-  if (errors.length > 0) {
-    res.render("add", {
-      errors,
-      name,
-      hours,
-      start_date,
-      end_date,
-      teacher_id,
-    });
-  } else {
-    // Insert into table
-    Courses.create({
-      // instead of 'name: name' with ES6 we can go like this:
-      name,
-      hours,
-      start_date,
-      end_date,
-      teacher_id,
-    })
-      .then((course) => res.redirect("/courses"))
-      .catch((err) => console.log(err));
-  }
+  // Insert into table
+  Courses.create({
+    // instead of 'name: name' with ES6 we can go like this:
+    name,
+    hours,
+    start_date,
+    end_date,
+    teacher_id,
+  })
+    .then((course) => res.redirect("/courses"))
+    .catch((err) => console.log(err));
 });
 
 // Search for Courses
