@@ -27,6 +27,7 @@ router.get("/add", (req, res) => res.render("add"));
 // Add a course
 router.post("/add", (req, res) => {
   let { name, hours, start_date, end_date, teacher_id } = req.body;
+  if (teacher_id === "null"){teacher_id = null}
 
   // Insert into table
   Courses.create({
