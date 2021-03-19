@@ -4,13 +4,10 @@
   {{#each courses}}
   <div class="courses">
     <h3>Course: &nbsp; {{dataValues.name}}</h3>
+
     <span>course_id: &nbsp; {{dataValues.course_id}}</span>
     <span style="margin-left: 2rem;">Delete Course: </span>
-
     <button class="course-delete-btn" onclick="deletelog({{dataValues.course_id}})">X</button>
-
-    <a href="/courses/delete/{{dataValues.course_id}}"
-      class="course-delete-btn">XX</a>
     <ul>
       <li>start date: &nbsp; {{dataValues.start_date}}</li>
       <li>end date: &nbsp; {{dataValues.end_date}}</li>
@@ -18,7 +15,12 @@
       {{!-- <li><a href="#" class="btn btn-reverse">Apply Now</a></li> --}}
     </ul>
     <div class="tech">
+      {{#if dataValues.Teacher.dataValues.name}}
       <span>Teacher: &nbsp; {{dataValues.Teacher.dataValues.name}}</span>
+      {{else}}
+      <span>Teacher: no teacher yet determined for this course</span>
+      {{/if}}
+      
     </div>
   </div>
   {{else}}
@@ -29,6 +31,6 @@
 
 <script>
   const deletelog = (id) => {
-    console.log(id)
+    window.location.replace(`/courses/delete/${id}`);
   }
 </script>

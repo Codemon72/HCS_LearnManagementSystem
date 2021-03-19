@@ -46,7 +46,6 @@ router.post("/add", (req, res) => {
 router.get("/delete/:id", (req, res) => { 
   const requestID = parseInt(req.params.id);
   Courses.destroy({ where: { course_id: requestID } })
-  // res.send("delete!");
   .then((course) => res.redirect("/courses"))
   .catch((err) => console.log(err));
 });
