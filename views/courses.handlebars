@@ -4,9 +4,16 @@
   {{#each courses}}
   <div class="courses">
     <h3>Course: &nbsp; {{dataValues.name}}</h3>
-
+    <button class="course-UD-btn" onclick="confirmDelete({{dataValues.course_id}})">X</button>
+    <div id="courseID{{dataValues.course_id}}" class="inactive confirm-delete">
+      Delete this course from the database?
+      <div class="confirm-delete--buttons">
+        <button class="btn btn-reverse" onclick="cancelDelete({{dataValues.course_id}})">Cancel delete</button>
+        <button class="btn btn-reverse" onclick="deleteCourse({{dataValues.course_id}})">Yes, delete this
+          course</button>
+      </div>
+    </div>
     <span>course_id: &nbsp; {{dataValues.course_id}}</span>
-    <button class="course-delete-btn" onclick="deleteCourse({{dataValues.course_id}})">X</button>
     <ul>
       <li>start date: &nbsp; {{dataValues.start_date}}</li>
       <li>end date: &nbsp; {{dataValues.end_date}}</li>
@@ -19,7 +26,7 @@
       {{else}}
       <span>Teacher: no teacher yet determined for this course</span>
       {{/if}}
-      
+
     </div>
   </div>
   {{else}}
@@ -29,8 +36,24 @@
 </section>
 
 <script>
+  
+  const confirmDelete = (id) => {
+    console.log('courseID' + id)
+    const divCourseID = document.getElementById('courseID' + id);
+    divCourseID.classList.remove('inactive')
+    divCourseID.classList.add('active');
+  }
+  const cancelDelete = (id) => {
+    const divCourseID = document.getElementById('courseID' + id);
+    divCourseID.classList.remove('active')
+    divCourseID.classList.add('inactive');
+  }
   const deleteCourse = (id) => {
-    window.location.replace(`/courses/delete/${id}`);
+    const divCourseID = document.getElementById('courseID' + id);
+    {{!-- window.location.replace(`/courses/delete/${id}`); --}}
+    divCourseID.classList.remove('active')
+    divCourseID.classList.add('inactive');
     alert(`course with id ${id} deleted!!!!!!!!`);
   }
+
 </script>
