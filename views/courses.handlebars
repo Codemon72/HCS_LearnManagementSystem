@@ -6,8 +6,7 @@
     <h3>Course: &nbsp; {{dataValues.name}}</h3>
 
     <span>course_id: &nbsp; {{dataValues.course_id}}</span>
-    <span style="margin-left: 2rem;">Delete Course: </span>
-    <button class="course-delete-btn" onclick="deletelog({{dataValues.course_id}})">X</button>
+    <button class="course-delete-btn" onclick="deleteCourse({{dataValues.course_id}})">X</button>
     <ul>
       <li>start date: &nbsp; {{dataValues.start_date}}</li>
       <li>end date: &nbsp; {{dataValues.end_date}}</li>
@@ -30,7 +29,8 @@
 </section>
 
 <script>
-  const deletelog = (id) => {
+  const deleteCourse = (id) => {
     window.location.replace(`/courses/delete/${id}`);
+    alert(`course with id ${id} deleted!!!!!!!!`);
   }
 </script>
