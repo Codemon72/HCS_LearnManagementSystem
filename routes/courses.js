@@ -46,21 +46,8 @@ router.post("/add", (req, res) => {
 router.get("/delete/:id", (req, res) => { 
   const requestID = parseInt(req.params.id);
   Courses.destroy({ where: { course_id: requestID } })
-  .then((course) => {
+  .then(() => {
     res.redirect("/courses");
-  })
-  .then((bling) => {
-    window.onload = () => {
-      console.log('blib');
-      const divDeleteConfirm = document.getElementById('delete-confirmation');
-      divDeleteConfirm.innerText = `Course with ID: ${id} was deleted!`
-      divDeleteConfirm.classList.remove('inactive')
-      divDeleteConfirm.classList.add('active');
-      setTimeout(() => {
-        divDeleteConfirm.classList.remove('active')
-        divDeleteConfirm.classList.add('inactive');
-      }, 4000)
-    }
   })
   .catch((err) => console.log(err));
 });
