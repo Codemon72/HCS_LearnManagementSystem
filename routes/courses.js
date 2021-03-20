@@ -42,6 +42,17 @@ router.post("/add", (req, res) => {
     .catch((err) => console.log(err));
 });
 
+// Delete a course
+router.get("/delete/:id", (req, res) => { 
+  const requestID = parseInt(req.params.id);
+  Courses.destroy({ where: { course_id: requestID } })
+  .then(() => {
+    res.redirect("/courses");
+  })
+  .catch((err) => console.log(err));
+});
+
+
 // Search for Courses
 router.get("/search", (req, res) => {
   const { term } = req.query;

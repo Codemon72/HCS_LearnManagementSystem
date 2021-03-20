@@ -1,9 +1,21 @@
 <section id="gigs" class="container">
   <h1>All Courses</h1>
 
+  <h2 id="delete-confirmation" class="inactive delete-confirmation">Course with ID XX was deleted successfully.</h2>
+
   {{#each courses}}
-  <div class="gig">
+  <div class="courses">
     <h3>Course: &nbsp; {{dataValues.name}}</h3>
+    <button class="course-UD-btn" onclick="confirmDelete({{dataValues.course_id}})">X</button>
+    <div id="courseID{{dataValues.course_id}}" class="inactive confirm-delete">
+      Delete this course from the database?
+      <div class="confirm-delete--buttons">
+        <button class="btn btn-reverse" onclick="cancelDelete({{dataValues.course_id}})">Cancel delete</button>
+        <button class="btn btn-reverse" onclick="deleteCourse({{dataValues.course_id}})">Yes, delete this
+          course</button>
+      </div>
+    </div>
+    <span class="course_id">course_id: &nbsp; {{dataValues.course_id}}</span>
     <ul>
       <li>start date: &nbsp; {{dataValues.start_date}}</li>
       <li>end date: &nbsp; {{dataValues.end_date}}</li>
@@ -11,7 +23,12 @@
       {{!-- <li><a href="#" class="btn btn-reverse">Apply Now</a></li> --}}
     </ul>
     <div class="tech">
+      {{#if dataValues.Teacher.dataValues.name}}
       <span>Teacher: &nbsp; {{dataValues.Teacher.dataValues.name}}</span>
+      {{else}}
+      <span>Teacher: no teacher yet determined for this course</span>
+      {{/if}}
+
     </div>
   </div>
   {{else}}
@@ -19,3 +36,5 @@
   {{/each}}
 
 </section>
+
+<script src="/scripts/deleteCourseUI.js"></script>
