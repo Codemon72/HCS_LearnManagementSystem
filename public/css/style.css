@@ -205,14 +205,17 @@ input[type="search"] {
 
 .course-UD-btn {
   position: absolute;
-  top: 35px;
+  top: 31px;
   right: 1rem;
+  padding: 4px 8px;
+  border-radius: 6px;
 }
 .course-UD-btn:hover,
 .course-UD-btn:focus {
   cursor: pointer;
   color: red;
-  transform: scale(1.2);
+  background-color: #fff;
+  /* transform: scale(1.2); */
 }
 .confirm-delete.active {
   position: absolute;
@@ -380,3 +383,12 @@ label {
     width: 100%;
   }
 }
+
+/* * { outline: 2px dotted red }
+* * { outline: 2px dotted green }
+* * * { outline: 2px dotted orange }
+* * * * { outline: 2px dotted blue }
+* * * * * { outline: 1px solid red }
+* * * * * * { outline: 1px solid green }
+* * * * * * * { outline: 1px solid orange }
+* * * * * * * * { outline: 1px solid blue } */
