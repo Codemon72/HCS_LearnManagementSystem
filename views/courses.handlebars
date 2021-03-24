@@ -13,7 +13,7 @@
     <div class="edit-or-delete">
       <div class="flex-between">
         <span class="">Edit this course&nbsp;</span>
-        <button class="btn btn-reverse"><i class="far fa-edit"></i></button>
+        <button class="btn btn-reverse" onclick="displayUpdateUI({{dataValues.course_id}})"><i class="far fa-edit"></i></button>
       </div>
 
       <div class="flex-between">
@@ -55,3 +55,4 @@
 </section>
 
 <script src="/scripts/deleteCourseUI.js"></script>
+<script src="/scripts/updateCourseUI.js"></script>
