@@ -6,14 +6,29 @@
   {{#each courses}}
   <div class="courses">
     <h3>Course: &nbsp; {{dataValues.name}}</h3>
-    <span class="course-UD-btn" onclick="confirmDelete({{dataValues.course_id}})">Edit &nbsp;<i class="far fa-edit"></i></span>
+    <span class="edit-btn" onclick="confirmDelete({{dataValues.course_id}})"><i
+        class="far fa-edit"></i></span>
+
+    {{!-- edit or delete --}}
+    <div class="edit-or-delete">
+      <div class="flex-between">
+        <span class="">Edit this course&nbsp;</span>
+        <i class="far fa-edit edit-btn"></i>
+      </div>
+
+      <div class="flex-between">
+        <span class="">Delete this course&nbsp;</span>
+        <i class="fas fa-trash-alt edit-btn" onclick="confirmDelete({{dataValues.course_id}})"></i>
+      </div>
+    </div>
 
     {{!-- confirm or cancel delete --}}
     <div id="courseID{{dataValues.course_id}}" class="inactive confirm-delete">
       Delete this course from the database?
       <div class="confirm-delete--buttons">
         <button class="btn btn-reverse" onclick="cancelDelete({{dataValues.course_id}})">Cancel</button>
-        <button class="btn btn-reverse" onclick="deleteCourse({{dataValues.course_id}})">Yes, delete this course</button>
+        <button class="btn btn-reverse" onclick="deleteCourse({{dataValues.course_id}})">Yes, delete this
+          course</button>
       </div>
     </div>
 

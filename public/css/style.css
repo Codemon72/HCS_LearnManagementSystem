@@ -67,11 +67,6 @@ header nav li {
   margin: 0 1rem;
 }
 
-/* Login Button Spacing */
-/*header nav li:last-child {
-  margin-left: -5px;
-}*/
-
 header.inner {
   background: var(--bg-color);
   border-bottom: 4px solid var(--primary-color);
@@ -114,6 +109,12 @@ header.inner {
 .button:hover {
   background: var(--primary-hover-color);
   border: 1px solid var(--primary-hover-color);
+}
+
+/* Flex  */
+.flex-between {
+  display: flex;
+  justify-content: space-between;
 }
 
 /* Home Search */
@@ -203,20 +204,46 @@ input[type="search"] {
   color: var(--primary-color);
 }
 
-.course-UD-btn {
+.edit-btn {
   position: absolute;
   top: 31px;
   right: 1rem;
-  padding: 4px 8px;
-  border-radius: 6px;
+  /* padding: 4px 8px; */
+  /* border-radius: 6px; */
 }
-.course-UD-btn:hover,
-.course-UD-btn:focus {
+.edit-btn:hover,
+.edit-btn:focus {
   cursor: pointer;
   color: red;
   background-color: #fff;
   /* transform: scale(1.2); */
 }
+.edit-or-delete {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 23px;
+  right: 14px;
+  width: 230;
+  height: 0;
+  transition: all .3s ease-in-out;
+  overflow: hidden;
+}
+.edit-btn:hover ~ .edit-or-delete,
+.edit-btn:focus ~ .edit-or-delete,
+.edit-or-delete:hover {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 23px;
+  right: 14px;
+  width: 230px;
+  height: auto;
+  padding: 1.5rem;
+  background-color: var(--custom-white);
+  color: var(--bg-color);
+}
+
 .confirm-delete.active {
   position: absolute;
   top: 23px;
