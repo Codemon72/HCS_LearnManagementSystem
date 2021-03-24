@@ -13,12 +13,12 @@
     <div class="edit-or-delete">
       <div class="flex-between">
         <span class="">Edit this course&nbsp;</span>
-        <i class="far fa-edit edit-btn"></i>
+        <button class="btn btn-reverse"><i class="far fa-edit"></i></button>
       </div>
 
       <div class="flex-between">
         <span class="">Delete this course&nbsp;</span>
-        <i class="fas fa-trash-alt edit-btn" onclick="confirmDelete({{dataValues.course_id}})"></i>
+        <button class="btn btn-reverse" onclick="confirmDelete({{dataValues.course_id}})"><i class="fas fa-trash-alt" ></i></button>
       </div>
     </div>
 
