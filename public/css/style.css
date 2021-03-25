@@ -242,6 +242,17 @@ input[type="search"] {
 .edit-or-delete .flex-between button {
   width: 45px;
 }
+.inactive.edit-course {
+  display: none;
+}
+.active.edit-course {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
 
 .confirm-delete.active {
   position: absolute;
