@@ -38,7 +38,7 @@ a:hover {
   max-width: 960px;
   padding: 1rem 4rem;
   margin: auto;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .error {
@@ -79,7 +79,7 @@ header.inner {
   color: #fff;
   padding: 0.6rem;
   border: 1px solid #ccc;
-  transition: all 0.4s;
+  transition: all 0.3s;
   cursor: pointer;
 }
 
@@ -102,7 +102,7 @@ header.inner {
   color: #fff;
   padding: 0.6rem;
   border: 1px solid #ccc;
-  transition: all 0.7s;
+  transition: all 0.3s;
   background: var(--primary-color);
   border: 1px solid var(--primary-color);
 }
@@ -147,7 +147,7 @@ header.inner {
   color: #fff;
   padding: 0 2rem;
   cursor: pointer;
-  transition: all 0.8s;
+  transition: all 0.3s;
 }
 
 .search-form input[type="submit"]:hover {
@@ -268,7 +268,8 @@ input[type="search"] {
 .confirm-delete.inactive {
   display: none;
 }
-.confirm-delete--buttons {
+.active.edit-course .buttons, 
+.active.confirm-delete .buttons {
   display: flex;
   margin-top: 1.5rem;
   justify-content: space-between;

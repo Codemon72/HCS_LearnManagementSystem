@@ -22,13 +22,13 @@
       </div>
     </div>
 
-    {{!-- edit --}}
+    {{!-- EDIT DISPLAY --}}
     <div id="editCourse{{dataValues.course_id}}" class="inactive edit-course courses">
       <form action="">
         <div class="input-group">
-          <label for="name">Course Name</label>
+          <h3>Course: &nbsp; {{dataValues.name}}</h3>
           <select class="input-box" name="name" id="name">
-            <option value="" selected>{{dataValues.name}}</option>
+            <option value="" selected disabled hidden>Edit</option>
             <option value="HTML & CSS">HTML & CSS</option>
             <option value="Learn To Code">Learn To Code</option>
             <option value="JavaScript For Web">JavaScript For Web</option>
@@ -38,65 +38,47 @@
           </select>
         </div>
         <div class="input-group">
-        <label for="hours">Hours Total</label>
-        <input 
-        type="number" 
-        name="hours" 
-        id="hours" 
-        class="input-box"
-        placeholder="{{dataValues.hours}}" 
-        maxlength="100"
-        value={{hours}}>
-      </div>
-      <div class="input-group">
-        <label for="start_date">Start Date</label>
-        <input 
-        type="date" 
-        name="start_date"
-        id="start_date" 
-        class="input-box" 
-        value={{start_date}}>
-      </div>
-      <div class="input-group">
-        <label for="end_date">End Date</label>
-        <input 
-        type="date"
-        name="end_date" 
-        id="end_date" 
-        class="input-box"
-        value={{end_date}}>
-      </div>
-      <div class="input-group">
-        <label for="teacher_id">Teacher</label>
-        <select 
-        type="number"
-        name="teacher_id" 
-        id="teacher_id" 
-        class="input-box">
-          <option value="" selected disabled hidden>Please select</option>
-          <option value="null">not determined yet</option>
-          <option value="2">Alexander Löhn</option>
-          <option value="5">Ansgar Mertens</option>
-          <option value="11">Benjamin Rabe</option>
-          <option value="7">Christoph Eicke</option>
-          <option value="1">Helder Pereira</option>
-          <option value="4">Jonas Reitmann</option>
-          <option value="8">Teresa Holfeld</option>
-          <option value="9">Thomas Hedeler</option>
-          <option value="10">Mary Vokicic</option>
-          <option value="3">Paul Anton</option>
-          <option value="6">Paul Mölders</option>
-        </select>
-      </div>
-      <button>Cancel</button>
-      <input type="submit" value="Update Course" class="btn btn-reverse" id="" disabled>
+          <label for="hours">Hours Total</label>
+          <input type="number" name="hours" id="hours" class="input-box" placeholder="Edit" maxlength="100"
+            value={{hours}}>
+        </div>
+        <div class="input-group">
+          <label for="start_date">Start Date</label>
+          <input type="date" name="start_date" id="start_date" class="input-box" value={{start_date}}>
+        </div>
+        <div class="input-group">
+          <label for="end_date">End Date</label>
+          <input type="date" name="end_date" id="end_date" class="input-box" value={{end_date}}>
+        </div>
+        <div class="input-group">
+          <label for="teacher_id">Teacher</label>
+          <select type="number" name="teacher_id" id="teacher_id" class="input-box">
+            <option value="" selected disabled hidden>Edit</option>
+            <option value="null">not determined yet</option>
+            <option value="2">Alexander Löhn</option>
+            <option value="5">Ansgar Mertens</option>
+            <option value="11">Benjamin Rabe</option>
+            <option value="7">Christoph Eicke</option>
+            <option value="1">Helder Pereira</option>
+            <option value="4">Jonas Reitmann</option>
+            <option value="8">Teresa Holfeld</option>
+            <option value="9">Thomas Hedeler</option>
+            <option value="10">Mary Vokicic</option>
+            <option value="3">Paul Anton</option>
+            <option value="6">Paul Mölders</option>
+          </select>
+        </div>
+        <div class="buttons">
+          <span class="btn btn-reverse" onclick="cancelUpdate({{dataValues.course_id}})">Cancel</span>
+          <input type="submit" value="Update Course" class="btn btn-reverse" id="" disabled>
+        </div>
       </form>
     </div>
 
-    {{!-- confirm or cancel delete --}}
+    {{!-- CONFIRM OR CANCEL: DELETE --}}
     <div id="courseID{{dataValues.course_id}}" class="inactive confirm-delete">
       Delete this course from the database?
-      <div class="confirm-delete--buttons">
+      <div class="buttons">
         <button class="btn btn-reverse" onclick="cancelDelete({{dataValues.course_id}})">Cancel</button>
         <button class="btn btn-reverse" onclick="deleteCourse({{dataValues.course_id}})">Yes, delete this
           course</button>
