@@ -15,6 +15,7 @@
 
 body {
   font-family: "Lato", sans-serif;
+  font-size: 18px;
   margin: 0;
   color: #333;
   background: #f4f4f4;
@@ -210,15 +211,12 @@ input[type="search"] {
   position: absolute;
   top: 31px;
   right: 1rem;
-  /* padding: 4px 8px; */
-  /* border-radius: 6px; */
 }
 .edit-btn:hover,
 .edit-btn:focus {
   cursor: pointer;
   color: red;
   background-color: #fff;
-  /* transform: scale(1.2); */
 }
 .edit-or-delete {
   display: none;
@@ -259,6 +257,11 @@ input[type="search"] {
   align-items: flex-start;
   margin-top: 2rem;
 }
+.active.edit-course .buttons {
+  display: flex;
+  margin: 2.5rem 0 1rem;
+  justify-content: space-between;
+}
 
 .confirm-delete.active {
   position: absolute;
@@ -273,7 +276,6 @@ input[type="search"] {
 .confirm-delete.inactive {
   display: none;
 }
-.active.edit-course .buttons, 
 .active.confirm-delete .buttons {
   display: flex;
   margin-top: 2.5rem;
