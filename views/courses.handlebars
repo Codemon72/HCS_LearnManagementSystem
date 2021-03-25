@@ -18,7 +18,7 @@
       {{#if dataValues.Teacher.dataValues.name}}
       <span>Teacher: &nbsp; {{dataValues.Teacher.dataValues.name}}</span>
       {{else}}
-      <span>Teacher: no teacher yet determined for this course</span>
+      <span>Teacher: no teacher determined yet</span>
       {{/if}}
     </div>
 
@@ -77,7 +77,7 @@
           {{#if dataValues.Teacher.dataValues.name}}
           <span>Teacher: &nbsp; {{dataValues.Teacher.dataValues.name}}</span>
           {{else}}
-          <span>Teacher: &nbsp; no teacher yet determined</span>
+          <span>Teacher: &nbsp; no teacher determined yet</span>
           {{/if}}
           <div class="input-group">
             <select type="number" name="teacher_id" id="teacher_id" class="input-box">
@@ -105,7 +105,7 @@
     </div>
 
     {{!-- CONFIRM OR CANCEL: DELETE --}}
-    <div id="courseID{{dataValues.course_id}}" class="inactive confirm-delete">
+    <div id="deleteCourse{{dataValues.course_id}}" class="inactive confirm-delete">
       Delete this course from the database?
       <div class="buttons">
         <button class="btn btn-reverse" onclick="cancelDelete({{dataValues.course_id}})">Cancel</button>
