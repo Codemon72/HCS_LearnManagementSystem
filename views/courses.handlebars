@@ -6,30 +6,113 @@
   {{#each courses}}
   <div class="courses">
     <h3>Course: &nbsp; {{dataValues.name}}</h3>
-    <button class="course-UD-btn" onclick="confirmDelete({{dataValues.course_id}})">X</button>
-    <div id="courseID{{dataValues.course_id}}" class="inactive confirm-delete">
-      Delete this course from the database?
-      <div class="confirm-delete--buttons">
-        <button class="btn btn-reverse" onclick="cancelDelete({{dataValues.course_id}})">Cancel delete</button>
-        <button class="btn btn-reverse" onclick="deleteCourse({{dataValues.course_id}})">Yes, delete this
-          course</button>
-      </div>
-    </div>
+    <span class="edit-btn" onclick="confirmDelete({{dataValues.course_id}})"><i class="far fa-edit"></i></span>
     <span class="course_id">course_id: &nbsp; {{dataValues.course_id}}</span>
     <ul>
       <li>start date: &nbsp; {{dataValues.start_date}}</li>
       <li>end date: &nbsp; {{dataValues.end_date}}</li>
       <li>Hours total: &nbsp; {{dataValues.hours}}</li>
-      {{!-- <li><a href="#" class="btn btn-reverse">Apply Now</a></li> --}}
     </ul>
     <div class="tech">
       {{#if dataValues.Teacher.dataValues.name}}
       <span>Teacher: &nbsp; {{dataValues.Teacher.dataValues.name}}</span>
       {{else}}
-      <span>Teacher: no teacher yet determined for this course</span>
+      <span>Teacher: no teacher determined yet</span>
       {{/if}}
-
     </div>
+
+    {{!-- EDIT OR DELETE DISPLAY --}}
+    <div class="edit-or-delete">
+      <div class="flex-between">
+        <span class="">Edit this course&nbsp;</span>
+        <button class="btn btn-reverse" onclick="displayUpdateUI({{dataValues.course_id}})"><i
+            class="far fa-edit"></i></button>
+      </div>
+      <div class="flex-between">
+        <span class="">Delete this course&nbsp;</span>
+        <button class="btn btn-reverse" onclick="confirmDelete({{dataValues.course_id}})"><i
+            class="fas fa-trash-alt"></i></button>
+      </div>
+    </div>
+
+    {{!-- EDIT DISPLAY --}}
+    <div id="editCourse{{dataValues.course_id}}" class="inactive edit-course courses">
+      <h2>Edit Course</h2>
+      <form action="">
+        <div class="flex-between">
+          <span>Course Name: &nbsp; {{dataValues.name}}</span>
+          <div class="input-group">
+            <select class="input-box" name="name" id="name">
+              <option value="" selected disabled hidden>Edit</option>
+              <option value="HTML & CSS">HTML & CSS</option>
+              <option value="Learn To Code">Learn To Code</option>
+              <option value="JavaScript For Web">JavaScript For Web</option>
+              <option value="React.js">React.js</option>
+              <option value="Node.js">Node.js</option>
+              <option value="Vue.js">Vue.js</option>
+            </select>
+          </div>
+        </div>
+        <div class="flex-between">
+          <span>Hours total: &nbsp; {{dataValues.hours}}</span>
+          <div class="input-group">
+            <input type="number" name="hours" id="hours" class="input-box" placeholder="Edit" maxlength="100"
+              value={{hours}}>
+          </div>
+        </div>
+        <div class="flex-between">
+          <span>Start Date: &nbsp; {{dataValues.start_date}}</span>
+          <div class="input-group">
+            <input type="date" name="start_date" id="start_date" class="input-box" value={{start_date}}>
+          </div>
+        </div>
+        <div class="flex-between">
+          <span>End Date: &nbsp; {{dataValues.end_date}}</span>
+          <div class="input-group">
+            <input type="date" name="end_date" id="end_date" class="input-box" value={{end_date}}>
+          </div>
+        </div>
+        <div class="flex-between">
+          {{#if dataValues.Teacher.dataValues.name}}
+          <span>Teacher: &nbsp; {{dataValues.Teacher.dataValues.name}}</span>
+          {{else}}
+          <span>Teacher: &nbsp; no teacher determined yet</span>
+          {{/if}}
+          <div class="input-group">
+            <select type="number" name="teacher_id" id="teacher_id" class="input-box">
+              <option value="" selected disabled hidden>Edit</option>
+              <option value="null">not determined yet</option>
+              <option value="2">Alexander Löhn</option>
+              <option value="5">Ansgar Mertens</option>
+              <option value="11">Benjamin Rabe</option>
+              <option value="7">Christoph Eicke</option>
+              <option value="1">Helder Pereira</option>
+              <option value="4">Jonas Reitmann</option>
+              <option value="8">Teresa Holfeld</option>
+              <option value="9">Thomas Hedeler</option>
+              <option value="10">Mary Vokicic</option>
+              <option value="3">Paul Anton</option>
+              <option value="6">Paul Mölders</option>
+            </select>
+          </div>
+        </div>
+        <div class="buttons">
+          <span class="btn btn-reverse" onclick="cancelUpdate({{dataValues.course_id}})">Cancel</span>
+          <input type="submit" value="Update Course" class="btn btn-reverse" id="" disabled>
+        </div>
+      </form>
+    </div>
+
+    {{!-- CONFIRM OR CANCEL: DELETE --}}
+    <div id="deleteCourse{{dataValues.course_id}}" class="inactive confirm-delete">
+      Delete this course from the database?
+      <div class="buttons">
+        <button class="btn btn-reverse" onclick="cancelDelete({{dataValues.course_id}})">Cancel</button>
+        <button class="btn btn-reverse" onclick="deleteCourse({{dataValues.course_id}})">Yes, delete this
+          course</button>
+      </div>
+    </div>
+
   </div>
   {{else}}
   <p>There are no courses in relation to your search.</p>
@@ -38,3 +121,4 @@
 </section>
 
 <script src="/scripts/deleteCourseUI.js"></script>
+<script src="/scripts/updateCourseUI.js"></script>

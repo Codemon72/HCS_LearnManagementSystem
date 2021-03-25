@@ -15,6 +15,7 @@
 
 body {
   font-family: "Lato", sans-serif;
+  font-size: 18px;
   margin: 0;
   color: #333;
   background: #f4f4f4;
@@ -38,7 +39,7 @@ a:hover {
   max-width: 960px;
   padding: 1rem 4rem;
   margin: auto;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .error {
@@ -67,11 +68,6 @@ header nav li {
   margin: 0 1rem;
 }
 
-/* Login Button Spacing */
-/*header nav li:last-child {
-  margin-left: -5px;
-}*/
-
 header.inner {
   background: var(--bg-color);
   border-bottom: 4px solid var(--primary-color);
@@ -82,9 +78,11 @@ header.inner {
 /* Buttons */
 .btn {
   color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
   padding: 0.6rem;
   border: 1px solid #ccc;
-  transition: all 0.4s;
+  transition: all 0.3s;
   cursor: pointer;
 }
 
@@ -107,13 +105,20 @@ header.inner {
   color: #fff;
   padding: 0.6rem;
   border: 1px solid #ccc;
-  transition: all 0.7s;
+  transition: all 0.3s;
   background: var(--primary-color);
   border: 1px solid var(--primary-color);
 }
 .button:hover {
   background: var(--primary-hover-color);
   border: 1px solid var(--primary-hover-color);
+}
+
+/* Flex  */
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* Home Search */
@@ -145,7 +150,7 @@ header.inner {
   color: #fff;
   padding: 0 2rem;
   cursor: pointer;
-  transition: all 0.8s;
+  transition: all 0.3s;
 }
 
 .search-form input[type="submit"]:hover {
@@ -183,7 +188,7 @@ input[type="search"] {
   background: var(--bg-color);
   border-bottom: 4px solid var(--primary-color);
   color: #fff;
-  padding: 1rem;
+  padding: 1.5rem;
   margin-bottom: 1rem;
   box-shadow: var(--box-shadow);
   position: relative;
@@ -199,21 +204,63 @@ input[type="search"] {
   padding: 0.6rem;
 }
 
-.courses .tech span {
-  color: var(--primary-color);
-}
-
-.course-UD-btn {
+/* EDIT / DELETE DISPLAYS */
+.edit-btn {
   position: absolute;
-  top: 35px;
+  top: 31px;
   right: 1rem;
 }
-.course-UD-btn:hover,
-.course-UD-btn:focus {
+.edit-btn:hover,
+.edit-btn:focus {
   cursor: pointer;
   color: red;
-  transform: scale(1.2);
+  background-color: #fff;
 }
+.edit-or-delete {
+  display: none;
+}
+.edit-btn:hover ~ .edit-or-delete,
+.edit-btn:focus ~ .edit-or-delete,
+.edit-or-delete:hover {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 23px;
+  right: 14px;
+  width: 250px;
+  padding: 1.5rem;
+  border-radius: 3px;
+  background-color: var(--custom-white);
+  color: var(--bg-color);
+}
+.edit-or-delete .flex-between + .flex-between {
+  margin-top: 1rem;
+}
+.edit-or-delete .flex-between button {
+  width: 45px;
+}
+.inactive.edit-course {
+  display: none;
+}
+.active.edit-course {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  outline: 4px solid orange;
+}
+.active.edit-course .flex-between {
+  align-items: flex-start;
+  margin-top: 2rem;
+}
+.active.edit-course .buttons {
+  display: flex;
+  margin: 2.5rem 0 1rem;
+  justify-content: space-between;
+}
+
 .confirm-delete.active {
   position: absolute;
   top: 23px;
@@ -222,13 +269,14 @@ input[type="search"] {
   padding: 1.5rem;
   background-color: var(--custom-white);
   color: var(--bg-color);
+  outline: 4px solid orangered;
 }
 .confirm-delete.inactive {
   display: none;
 }
-.confirm-delete--buttons {
+.active.confirm-delete .buttons {
   display: flex;
-  margin-top: 1.5rem;
+  margin-top: 2.5rem;
   justify-content: space-between;
 }
 .active.delete-confirmation {
@@ -243,11 +291,12 @@ input[type="search"] {
 .inactive.delete-confirmation {
   display: none;
 }
-.course_id {
+.course_id,
+.tech {
   margin-left: .6rem;
 }
 
-/* Form */
+/* FORM */
 .form-wrap {
   margin: auto;
   background: var(--bg-color);
@@ -292,9 +341,15 @@ label {
 .input-box {
   padding: 0.5rem;
   font-size: 18px;
+}
+.add-course .input-box {
   width: 100%;
   margin-bottom: 2rem;
 }
+.edit-course .input-box {
+  width: 220px;
+}
+
 .error-message {
   position: absolute;
   background-color: white;
@@ -380,3 +435,12 @@ label {
     width: 100%;
   }
 }
+
+/* * { outline: 2px dotted red }
+* * { outline: 2px dotted green }
+* * * { outline: 2px dotted orange }
+* * * * { outline: 2px dotted blue }
+* * * * * { outline: 1px solid red }
+* * * * * * { outline: 1px solid green }
+* * * * * * * { outline: 1px solid orange }
+* * * * * * * * { outline: 1px solid blue } */

@@ -1,13 +1,13 @@
 const confirmDelete = (id) => {
-  const divCourseID = document.getElementById("courseID" + id);
-  divCourseID.classList.remove("inactive");
-  divCourseID.classList.add("active");
+  const deleteDiv = document.getElementById("deleteCourse" + id);
+  deleteDiv.classList.remove("inactive");
+  deleteDiv.classList.add("active");
 };
 
 const cancelDelete = (id) => {
-  const divCourseID = document.getElementById("courseID" + id);
-  divCourseID.classList.remove("active");
-  divCourseID.classList.add("inactive");
+  const deleteDiv = document.getElementById("deleteCourse" + id);
+  deleteDiv.classList.remove("active");
+  deleteDiv.classList.add("inactive");
 };
 
 const deleteCourse = (id) => {
