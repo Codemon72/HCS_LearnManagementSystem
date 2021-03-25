@@ -27,7 +27,9 @@ router.get("/add", (req, res) => res.render("add"));
 // Add a course
 router.post("/add", (req, res) => {
   let { name, hours, start_date, end_date, teacher_id } = req.body;
-  if (teacher_id === "null"){teacher_id = null}
+  if (teacher_id === "null") {
+    teacher_id = null;
+  }
 
   // Insert into table
   Courses.create({
@@ -43,22 +45,29 @@ router.post("/add", (req, res) => {
 });
 
 // Update a course
-router.post("/update", (req, res) => { 
-  let { name, hours, start_date, end_date, teacher_id } = req.body;
-  if (teacher_id === "null"){teacher_id = null}
-  console.log(name, hours, start_date, end_date, teacher_id )
+router.post("/update", (req, res) => {
+  let { name, hours, start_date, end_date, teacher_id, course_id } = req.body;
+  if (teacher_id === "null") {
+    teacher_id = null;
+  }
+  console.log(name, hours, start_date, end_date, teacher_id, course_id);
+
+  Courses.update({ hours: 15 }, { where: { course_id: 64 } })
+    .then(() => {
+      res.redirect("/courses");
+    })
+    .catch((err) => console.log(err));
 });
 
 // Delete a course
-router.get("/delete/:id", (req, res) => { 
+router.get("/delete/:id", (req, res) => {
   const requestID = parseInt(req.params.id);
   Courses.destroy({ where: { course_id: requestID } })
-  .then(() => {
-    res.redirect("/courses");
-  })
-  .catch((err) => console.log(err));
+    .then(() => {
+      res.redirect("/courses");
+    })
+    .catch((err) => console.log(err));
 });
-
 
 // Search for Courses
 router.get("/search", (req, res) => {
