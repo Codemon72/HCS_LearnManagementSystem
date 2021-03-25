@@ -42,6 +42,13 @@ router.post("/add", (req, res) => {
     .catch((err) => console.log(err));
 });
 
+// Update a course
+router.post("/update", (req, res) => { 
+  let { name, hours, start_date, end_date, teacher_id } = req.body;
+  if (teacher_id === "null"){teacher_id = null}
+  console.log(name, hours, start_date, end_date, teacher_id )
+});
+
 // Delete a course
 router.get("/delete/:id", (req, res) => { 
   const requestID = parseInt(req.params.id);
