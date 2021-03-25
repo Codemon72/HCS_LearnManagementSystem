@@ -252,6 +252,7 @@ input[type="search"] {
   left: 0;
   right: 0;
   z-index: 10;
+  outline: 4px solid orange;
 }
 
 .confirm-delete.active {
@@ -262,6 +263,7 @@ input[type="search"] {
   padding: 1.5rem;
   background-color: var(--custom-white);
   color: var(--bg-color);
+  outline: 4px solid orangered;
 }
 .confirm-delete.inactive {
   display: none;
