@@ -26,6 +26,16 @@ const showDeleteConfirmation = (id) => {
   }, 4000);
 };
 
-if (typeof requestID !== 'undefined'){
-  showDeleteConfirmation(requestID)
-}
+
+const queryString = window.location.search; 
+const urlParams = new URLSearchParams(queryString); 
+const deletedID = urlParams.get('deleted');
+
+// TODO
+// if (typeof deletedID !== 'undefined'){
+//   showDeleteConfirmation(deletedID)
+// }
+
+if (deletedID) {
+  showDeleteConfirmation(deletedID)
+};

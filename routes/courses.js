@@ -6,7 +6,12 @@ const Teachers = require("../models/Teachers");
 const { Sequelize, Op } = require("sequelize");
 
 // Get all courses
-router.get("/", (req, res) =>
+router.get("/", (req, res) => {
+  // const query = req.query.deleted;
+  // console.log(query);
+  // if (typeof query !== 'undefined'){
+  //   showDeleteConfirmation(query)
+  // }
   Courses.findAll({
     include: [Teachers],
   })
@@ -18,8 +23,8 @@ router.get("/", (req, res) =>
         courses,
       });
     })
-    .catch((err) => console.log(`Error: ${err}`))
-);
+    .catch((err) => console.log(`Error: ${err}`));
+});
 
 // Display form to add a course
 router.get("/add", (req, res) => res.render("add"));
@@ -67,7 +72,7 @@ router.get("/delete/:id", (req, res) => {
   const requestID = parseInt(req.params.id);
   Courses.destroy({ where: { course_id: requestID } })
     .then(() => {
-      res.redirect("/courses");
+      res.redirect("/courses" + "?deleted=" + requestID);
     })
     .catch((err) => console.log(err));
 });
