@@ -7,8 +7,22 @@
   <div class="courses">
     <h3>Course: &nbsp; {{dataValues.name}}</h3>
     <span class="edit-btn" onclick="confirmDelete({{dataValues.course_id}})"><i class="far fa-edit"></i></span>
+    <span class="course_id">course_id: &nbsp; {{dataValues.course_id}}</span>
+    <ul>
+      <li>start date: &nbsp; {{dataValues.start_date}}</li>
+      <li>end date: &nbsp; {{dataValues.end_date}}</li>
+      <li>Hours total: &nbsp; {{dataValues.hours}}</li>
+      {{!-- <li><a href="#" class="btn btn-reverse">Apply Now</a></li> --}}
+    </ul>
+    <div class="tech">
+      {{#if dataValues.Teacher.dataValues.name}}
+      <span>Teacher: &nbsp; {{dataValues.Teacher.dataValues.name}}</span>
+      {{else}}
+      <span>Teacher: no teacher yet determined for this course</span>
+      {{/if}}
+    </div>
 
-    {{!-- edit or delete --}}
+    {{!-- EDIT OR DELETE DISPLAY --}}
     <div class="edit-or-delete">
       <div class="flex-between">
         <span class="">Edit this course&nbsp;</span>
@@ -84,22 +98,7 @@
           course</button>
       </div>
     </div>
-
-    <span class="course_id">course_id: &nbsp; {{dataValues.course_id}}</span>
-    <ul>
-      <li>start date: &nbsp; {{dataValues.start_date}}</li>
-      <li>end date: &nbsp; {{dataValues.end_date}}</li>
-      <li>Hours total: &nbsp; {{dataValues.hours}}</li>
-      {{!-- <li><a href="#" class="btn btn-reverse">Apply Now</a></li> --}}
-    </ul>
-    <div class="tech">
-      {{#if dataValues.Teacher.dataValues.name}}
-      <span>Teacher: &nbsp; {{dataValues.Teacher.dataValues.name}}</span>
-      {{else}}
-      <span>Teacher: no teacher yet determined for this course</span>
-      {{/if}}
-
-    </div>
+    
   </div>
   {{else}}
   <p>There are no courses in relation to your search.</p>
