@@ -52,7 +52,10 @@ router.post("/update", (req, res) => {
   }
   console.log(name, hours, start_date, end_date, teacher_id, course_id);
 
-  Courses.update({ hours: 15 }, { where: { course_id: 64 } })
+  Courses.update(
+    { name, hours, start_date, end_date, teacher_id },
+    { where: { course_id: 64 } }
+  )
     .then(() => {
       res.redirect("/courses");
     })
