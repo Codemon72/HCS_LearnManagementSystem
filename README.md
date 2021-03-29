@@ -1,7 +1,7 @@
 work in progress: 
 # Project for Hamburg Coding School: Learning Management System
 
-## Tech-Stack
+## Tech Stack
 - local Database with MariaDB
   - GUI: Sequel Ace
 - Node.js
@@ -43,4 +43,6 @@ Pages:
 ### Entity Relationship Diagram
 ![ERD - HAMBURG CODING SCHOOL LMS.png](/public/img/ERD-HAMBURG_CODING_SCHOOL_LMS.png)
 
+I started with a [tutorial from Brad Traversy](https://www.youtube.com/watch?v=bOHysWYMZM0&list=PLillGF-RfqbZyLc9sMQ72_u3FW9fVxo1p) and customized and continued from there.
 
+(c) 2021 - Clemens Bruesch
