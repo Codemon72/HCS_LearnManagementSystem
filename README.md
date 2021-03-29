@@ -13,12 +13,14 @@ work in progress:
 - SQL
 
 ## Features
-- Relational database for teachers, students, courses and bookings of Hamburg Coding School.
-- UX: 
+- Relational database for teachers, students, courses and course bookings of Hamburg Coding School.
+- UX I put focus on: 
+  - intuitive and interactive surface
   - all buttons styled for hover and focus
   - forms with error and verification messages
   - confirmation request before course deletion
   - confirmation upon deletion
+  - sufficient contrast for accessibility
 
 Pages:
 
@@ -35,14 +37,10 @@ Pages:
 - validation of data with direct feedback for user
 - submit button enabled after validation
 
-
-### CSS
-- sufficient contrast
-
 ---
 ### Entity Relationship Diagram
 ![ERD - HAMBURG CODING SCHOOL LMS.png](/public/img/ERD-HAMBURG_CODING_SCHOOL_LMS.png)
 
-I started with a [tutorial from Brad Traversy](https://www.youtube.com/watch?v=bOHysWYMZM0&list=PLillGF-RfqbZyLc9sMQ72_u3FW9fVxo1p) and customized and continued from there.
+I started with a [tutorial from Brad Traversy](https://www.youtube.com/watch?v=bOHysWYMZM0&list=PLillGF-RfqbZyLc9sMQ72_u3FW9fVxo1p), customized it and continued from there.
 
 (c) 2021 - Clemens Bruesch
