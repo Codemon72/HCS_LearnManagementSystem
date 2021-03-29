@@ -5,19 +5,14 @@ const Courses = require("../models/Courses");
 const Teachers = require("../models/Teachers");
 const { Sequelize, Op } = require("sequelize");
 
+
 // Get all courses
 router.get("/", (req, res) => {
-  // const query = req.query.deleted;
-  // console.log(query);
-  // if (typeof query !== 'undefined'){
-  //   showDeleteConfirmation(query)
-  // }
   Courses.findAll({
     include: [Teachers],
   })
     .then((courses) => {
       // res.sendStatus(200);
-      // console.log(courses[0].dataValues.Teacher.dataValues.name);
       res.render("courses", {
         // courses: courses
         courses,
@@ -26,8 +21,10 @@ router.get("/", (req, res) => {
     .catch((err) => console.log(`Error: ${err}`));
 });
 
+
 // Display form to add a course
 router.get("/add", (req, res) => res.render("add"));
+
 
 // Add a course
 router.post("/add", (req, res) => {
@@ -35,7 +32,6 @@ router.post("/add", (req, res) => {
   if (teacher_id === "null") {
     teacher_id = null;
   }
-
   // Insert into table
   Courses.create({
     // instead of 'name: name' with ES6 we can go like this:
@@ -55,8 +51,6 @@ router.post("/update", (req, res) => {
   if (teacher_id === "null") {
     teacher_id = null;
   }
-  console.log(name, hours, start_date, end_date, teacher_id, course_id);
-
   Courses.update(
     { name, hours, start_date, end_date, teacher_id },
     { where: { course_id: course_id } }
@@ -67,15 +61,18 @@ router.post("/update", (req, res) => {
     .catch((err) => console.log(err));
 });
 
+
 // Delete a course
 router.get("/delete/:id", (req, res) => {
-  const requestID = parseInt(req.params.id);
-  Courses.destroy({ where: { course_id: requestID } })
+  const idDeleted = parseInt(req.params.id);
+  Courses.destroy({ where: { course_id: idDeleted } })
     .then(() => {
-      res.redirect("/courses" + "?deleted=" + requestID);
+      // id of deleted course added to URL to display confirmation of deletion to user
+      res.redirect("/courses" + "?deleted=" + idDeleted);
     })
     .catch((err) => console.log(err));
 });
+
 
 // Search for Courses
 router.get("/search", (req, res) => {
@@ -89,6 +86,7 @@ router.get("/search", (req, res) => {
 });
 
 module.exports = router;
+
 
 // Hacky way to quickly insert a course to the database:
 

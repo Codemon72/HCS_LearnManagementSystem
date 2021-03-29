@@ -13,7 +13,12 @@ work in progress:
 - SQL
 
 ## Features
-Relational database for teachers, students, courses and bookings of Hamburg Coding School.
+- Relational database for teachers, students, courses and bookings of Hamburg Coding School.
+- UX: 
+  - all buttons styled for hover and focus
+  - forms with error and verification messages
+  - confirmation request before course deletion
+  - confirmation upon deletion
 
 Pages:
 
@@ -30,6 +35,11 @@ Pages:
 - validation of data with direct feedback for user
 - submit button enabled after validation
 
+
+### CSS
+- sufficient contrast
+
+---
 ### Entity Relationship Diagram
 ![ERD - HAMBURG CODING SCHOOL LMS.png](/public/img/ERD-HAMBURG_CODING_SCHOOL_LMS.png)
 
