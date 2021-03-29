@@ -1,6 +1,9 @@
 work in progress: 
 # Project for Hamburg Coding School: Learning Management System
 
+In this Repo I am working on an App to fill and manage a database for courses, students and teachers for [Hamburg Coding School](https://hamburgcodingschool.com/).
+I started using a basic [tutorial from Brad Traversy](https://www.youtube.com/watch?v=bOHysWYMZM0&list=PLillGF-RfqbZyLc9sMQ72_u3FW9fVxo1p), changed it up and am adding now lots of functionality.
+
 ## Tech Stack
 - local Database with MariaDB
   - GUI: Sequel Ace
@@ -41,6 +44,4 @@ Pages:
 ### Entity Relationship Diagram
 ![ERD - HAMBURG CODING SCHOOL LMS.png](/public/img/ERD-HAMBURG_CODING_SCHOOL_LMS.png)
 
-I started with a [tutorial from Brad Traversy](https://www.youtube.com/watch?v=bOHysWYMZM0&list=PLillGF-RfqbZyLc9sMQ72_u3FW9fVxo1p), customized it and continued from there.
-
-(c) 2021 - Clemens Bruesch
+&copy; 2021 - Clemens Bruesch

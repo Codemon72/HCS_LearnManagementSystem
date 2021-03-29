@@ -67,7 +67,7 @@ router.get("/delete/:id", (req, res) => {
   const idDeleted = parseInt(req.params.id);
   Courses.destroy({ where: { course_id: idDeleted } })
     .then(() => {
-      // id of deleted course added to URL to display confirmation of deletion to user
+      // id of deleted course added to URL to display delete confirmation
       res.redirect("/courses" + "?deleted=" + idDeleted);
     })
     .catch((err) => console.log(err));

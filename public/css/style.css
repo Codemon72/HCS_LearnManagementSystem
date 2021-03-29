@@ -388,16 +388,6 @@ label {
     padding: 2.3rem;
   }
 
-  .gig ul {
-    flex-direction: column;
-  }
-
-  .gig .btn {
-    display: block;
-    margin-top: 1rem;
-    text-align: center;
-  }
-
   .form-wrap.reg-form,
   .form-wrap.login-form {
     width: 80%;
@@ -437,11 +427,11 @@ label {
   }
 }
 
-/* * { outline: 2px dotted red }
+ * { outline: 2px dotted red }
 * * { outline: 2px dotted green }
 * * * { outline: 2px dotted orange }
 * * * * { outline: 2px dotted blue }
 * * * * * { outline: 1px solid red }
 * * * * * * { outline: 1px solid green }
 * * * * * * * { outline: 1px solid orange }
-* * * * * * * * { outline: 1px solid blue } */
+* * * * * * * * { outline: 1px solid blue } 
