@@ -6,7 +6,12 @@ const Teachers = require("../models/Teachers");
 const { Sequelize, Op } = require("sequelize");
 
 // Get all courses
-router.get("/", (req, res) =>
+router.get("/", (req, res) => {
+  // const query = req.query.deleted;
+  // console.log(query);
+  // if (typeof query !== 'undefined'){
+  //   showDeleteConfirmation(query)
+  // }
   Courses.findAll({
     include: [Teachers],
   })
@@ -18,8 +23,8 @@ router.get("/", (req, res) =>
         courses,
       });
     })
-    .catch((err) => console.log(`Error: ${err}`))
-);
+    .catch((err) => console.log(`Error: ${err}`));
+});
 
 // Display form to add a course
 router.get("/add", (req, res) => res.render("add"));
@@ -27,7 +32,9 @@ router.get("/add", (req, res) => res.render("add"));
 // Add a course
 router.post("/add", (req, res) => {
   let { name, hours, start_date, end_date, teacher_id } = req.body;
-  if (teacher_id === "null"){teacher_id = null}
+  if (teacher_id === "null") {
+    teacher_id = null;
+  }
 
   // Insert into table
   Courses.create({
@@ -42,16 +49,33 @@ router.post("/add", (req, res) => {
     .catch((err) => console.log(err));
 });
 
-// Delete a course
-router.get("/delete/:id", (req, res) => { 
-  const requestID = parseInt(req.params.id);
-  Courses.destroy({ where: { course_id: requestID } })
-  .then(() => {
-    res.redirect("/courses");
-  })
-  .catch((err) => console.log(err));
+// Update a course
+router.post("/update", (req, res) => {
+  let { name, hours, start_date, end_date, teacher_id, course_id } = req.body;
+  if (teacher_id === "null") {
+    teacher_id = null;
+  }
+  console.log(name, hours, start_date, end_date, teacher_id, course_id);
+
+  Courses.update(
+    { name, hours, start_date, end_date, teacher_id },
+    { where: { course_id: course_id } }
+  )
+    .then(() => {
+      res.redirect("/courses");
+    })
+    .catch((err) => console.log(err));
 });
 
+// Delete a course
+router.get("/delete/:id", (req, res) => {
+  const requestID = parseInt(req.params.id);
+  Courses.destroy({ where: { course_id: requestID } })
+    .then(() => {
+      res.redirect("/courses" + "?deleted=" + requestID);
+    })
+    .catch((err) => console.log(err));
+});
 
 // Search for Courses
 router.get("/search", (req, res) => {

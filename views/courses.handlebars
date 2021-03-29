@@ -17,7 +17,7 @@
       {{#if dataValues.Teacher.dataValues.name}}
       <span>Teacher: &nbsp; {{dataValues.Teacher.dataValues.name}}</span>
       {{else}}
-      <span>Teacher: no teacher determined yet</span>
+      <span>Teacher: not determined yet</span>
       {{/if}}
     </div>
 
@@ -38,7 +38,7 @@
     {{!-- EDIT DISPLAY --}}
     <div id="editCourse{{dataValues.course_id}}" class="inactive edit-course courses">
       <h2>Edit Course</h2>
-      <form action="">
+      <form action="/courses/update" method="POST">
         <div class="flex-between">
           <span>Course Name: &nbsp; {{dataValues.name}}</span>
           <div class="input-group">
@@ -76,7 +76,7 @@
           {{#if dataValues.Teacher.dataValues.name}}
           <span>Teacher: &nbsp; {{dataValues.Teacher.dataValues.name}}</span>
           {{else}}
-          <span>Teacher: &nbsp; no teacher determined yet</span>
+          <span>Teacher: &nbsp; not determined yet</span>
           {{/if}}
           <div class="input-group">
             <select type="number" name="teacher_id" id="teacher_id" class="input-box">
@@ -96,9 +96,10 @@
             </select>
           </div>
         </div>
+        <input name="course_id" id="course_id" value="{{dataValues.course_id}}" type="hidden">
         <div class="buttons">
           <span class="btn btn-reverse" onclick="cancelUpdate({{dataValues.course_id}})">Cancel</span>
-          <input type="submit" value="Update Course" class="btn btn-reverse" id="" disabled>
+          <input type="submit" value="Update Course" class="btn btn-reverse" id="">
         </div>
       </form>
     </div>
