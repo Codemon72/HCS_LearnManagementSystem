@@ -10,14 +10,13 @@ const cancelDelete = (id) => {
   deleteDiv.classList.add("inactive");
 };
 
-const deleteCourse = (id) => {
-  window.location.replace(`/courses/delete/${id}`);
+const deleteCourse = (course_id) => {
+  window.location.replace(`/courses/delete/${course_id}`);
 };
 
-// TODO: call showDeleteConfirmation after deletion
-const showDeleteConfirmation = (id) => {
+const showDeleteConfirmation = (course_id) => {
   const divDeleteConfirm = document.getElementById("delete-confirmation");
-  divDeleteConfirm.innerText = `Course with ID: ${id} was deleted!`;
+  divDeleteConfirm.innerText = `Course with ID: ${course_id} was deleted!`;
   divDeleteConfirm.classList.remove("inactive");
   divDeleteConfirm.classList.add("active");
   setTimeout(() => {
