@@ -33,7 +33,12 @@ Pages:
 
 ### "All Courses"
 - listing of all courses
-- edit or delete
+- edit
+  - form is pre-filled with course data
+- delete
+  - before deletion: confirmation requested
+  - after deletion: confirmation of deletion is displayed
+
 
 ### "Add Course"
 - form to add a course
