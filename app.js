@@ -14,7 +14,8 @@ db.authenticate()
 const app = express();
 
 // Handlebars
-app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
+const hbs = exphbs.create({defaultLayout: 'main'});
+app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 // Body Parser

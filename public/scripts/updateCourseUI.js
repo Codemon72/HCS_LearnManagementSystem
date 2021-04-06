@@ -13,3 +13,4 @@ const cancelUpdate = (id) => {
   editDiv.classList.add('inactive');
   console.log('öadslkfjdls')
 };
+
