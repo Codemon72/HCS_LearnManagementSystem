@@ -45,21 +45,25 @@
             <select class="input-box" name="name" id="name">
               {{!-- <option value="" selected disabled hidden>Edit</option> --}}
               <option value="HTML & CSS" 
-                {{!-- {{#ifEquals dataValues.name 'HTML & CSS'}} selected 
-                {{else}} ''
-                {{/ifEquals}} --}}
+                {{checkIfSelected dataValues.name 'HTML & CSS'}}
                 >HTML & CSS
               </option>
               <option 
                 value="Learn To Code" 
-                {{!-- {{#ifEquals dataValues.name 'Learn To Code'}} selected 
-                {{else}} ''
-                {{/ifEquals}} --}}
+                {{checkIfSelected dataValues.name 'Learn To Code'}}
                 >Learn To Code</option>
-              <option value="JavaScript For Web">JavaScript For Web</option>
-              <option value="React.js">React.js</option>
-              <option value="Node.js">Node.js</option>
-              <option value="Vue.js">Vue.js</option>
+              <option value="JavaScript For Web"
+                {{checkIfSelected dataValues.name 'JavaScript For Web'}}
+                >JavaScript For Web</option>
+              <option value="React.js"
+                {{checkIfSelected dataValues.name 'React.js'}}
+                >React.js</option>
+              <option value="Node.js"
+                {{checkIfSelected dataValues.name 'Node.js'}}
+                >Node.js</option>
+              <option value="Vue.js"
+                {{checkIfSelected dataValues.name 'Vue.js'}}
+                >Vue.js</option>
             </select>
           </div>
         </div>
