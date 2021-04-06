@@ -2,7 +2,8 @@ work in progress:
 # Project for Hamburg Coding School: Learning Management System
 
 In this Repo I am working on an App to fill and manage a database for courses, students and teachers for [Hamburg Coding School](https://hamburgcodingschool.com/).
-I started using a basic [tutorial from Brad Traversy](https://www.youtube.com/watch?v=bOHysWYMZM0&list=PLillGF-RfqbZyLc9sMQ72_u3FW9fVxo1p), changed it up and am adding now lots of functionality.
+I started using a basic [tutorial from Brad Traversy](https://www.youtube.com/watch?v=bOHysWYMZM0&list=PLillGF-RfqbZyLc9sMQ72_u3FW9fVxo1p). 
+After modifications I am expanding its functionality.
 
 ## Tech Stack
 - local Database with MariaDB
@@ -16,25 +17,19 @@ I started using a basic [tutorial from Brad Traversy](https://www.youtube.com/wa
 - SQL
 
 ## Features
-- Relational database for teachers, students, courses and course bookings of Hamburg Coding School.
-- UX I put focus on: 
-  - intuitive and interactive surface
-  - all buttons styled for hover and focus
-  - forms with error and verification messages
-  - confirmation request before course deletion
-  - confirmation upon deletion
-  - sufficient contrast for accessibility
+- Relational database for teachers, students, courses and course bookings of [Hamburg Coding School](https://hamburgcodingschool.com/).
+- intuitive and interactive interface
 
 Pages:
 
 ### "Home"
-- search all courses
-- edit or delete
+- search all courses by name
 
 ### "All Courses"
-- listing of all courses
+- listing all courses
 - edit
   - form is pre-filled with course data
+  - all data is editable
 - delete
   - before deletion: confirmation requested
   - after deletion: confirmation of deletion is displayed
