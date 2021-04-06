@@ -11,6 +11,5 @@ const cancelUpdate = (id) => {
   const editDiv = document.getElementById('editCourse' + id);
   editDiv.classList.remove('active');
   editDiv.classList.add('inactive');
-  console.log('öadslkfjdls')
 };
 
