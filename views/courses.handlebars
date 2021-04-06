@@ -97,19 +97,42 @@
           {{/if}}
           <div class="input-group">
             <select type="number" name="teacher_id" id="teacher_id" class="input-box">
-              <option value="" selected disabled hidden>Edit</option>
-              <option value="null">not determined yet</option>
-              <option value="2">Alexander Löhn</option>
-              <option value="5">Ansgar Mertens</option>
-              <option value="11">Benjamin Rabe</option>
-              <option value="7">Christoph Eicke</option>
-              <option value="1">Helder Pereira</option>
-              <option value="4">Jonas Reitmann</option>
-              <option value="8">Teresa Holfeld</option>
-              <option value="9">Thomas Hedeler</option>
-              <option value="10">Mary Vokicic</option>
-              <option value="3">Paul Anton</option>
-              <option value="6">Paul Mölders</option>
+              <option value="null"
+                {{checkIfSelected dataValues.Teacher.dataValues.name null}}
+                >not determined yet</option>
+              <option value="2"
+                {{checkIfSelected dataValues.Teacher.dataValues.name 'Alexander Löhn'}}
+                >Alexander Löhn</option>
+              <option value="5"
+                {{checkIfSelected dataValues.Teacher.dataValues.name 'Ansgar Mertens'}}
+                >Ansgar Mertens</option>
+              <option value="11"
+                {{checkIfSelected dataValues.Teacher.dataValues.name 'Benjamin Rabe'}}
+                >Benjamin Rabe</option>
+              <option value="7"
+                {{checkIfSelected dataValues.Teacher.dataValues.name 'Christoph Eicke'}}
+                >Christoph Eicke</option>
+              <option value="1"
+                {{checkIfSelected dataValues.Teacher.dataValues.name 'Helder Pereira'}}
+                >Helder Pereira</option>
+              <option value="4"
+                {{checkIfSelected dataValues.Teacher.dataValues.name 'Jonas Reitmann'}}
+                >Jonas Reitmann</option>
+              <option value="8"
+                {{checkIfSelected dataValues.Teacher.dataValues.name 'Teresa Holfeld'}}
+                >Teresa Holfeld</option>
+              <option value="9"
+                {{checkIfSelected dataValues.Teacher.dataValues.name 'Thomas Hedeler'}}
+                >Thomas Hedeler</option>
+              <option value="10"
+                {{checkIfSelected dataValues.Teacher.dataValues.name 'Mary Vokicic'}}
+                >Mary Vokicic</option>
+              <option value="3"
+                {{checkIfSelected dataValues.Teacher.dataValues.name 'Paul Anton'}}
+                >Paul Anton</option>
+              <option value="6"
+                {{checkIfSelected dataValues.Teacher.dataValues.name 'Paul Mölders'}}
+                >Paul Mölders</option>
             </select>
           </div>
         </div>
