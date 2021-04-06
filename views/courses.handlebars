@@ -21,7 +21,7 @@
       {{/if}}
     </div>
 
-    {{!-- EDIT OR DELETE DISPLAY --}}
+    {{!-- 'EDIT OR DELETE' DISPLAY --}}
     <div class="edit-or-delete">
       <div class="flex-between">
         <span class="">Edit this course&nbsp;</span>
@@ -35,7 +35,7 @@
       </div>
     </div>
 
-    {{!-- EDIT DISPLAY --}}
+    {{!-- 'EDIT' DISPLAY --}}
     <div id="editCourse{{dataValues.course_id}}" class="inactive edit-course courses">
       <h2>Edit Course</h2>
       <form action="/courses/update" method="POST">
@@ -43,13 +43,30 @@
           <span>Course Name: &nbsp; {{dataValues.name}}</span>
           <div class="input-group">
             <select class="input-box" name="name" id="name">
-              <option value="" selected disabled hidden>Edit</option>
-              <option value="HTML & CSS">HTML & CSS</option>
-              <option value="Learn To Code">Learn To Code</option>
-              <option value="JavaScript For Web">JavaScript For Web</option>
-              <option value="React.js">React.js</option>
-              <option value="Node.js">Node.js</option>
-              <option value="Vue.js">Vue.js</option>
+              {{!-- <option value="" selected disabled hidden>Edit</option> --}}
+              <option value="HTML & CSS" 
+                {{checkIfSelected dataValues.name 'HTML & CSS'}}
+                >HTML & CSS
+              </option>
+              <option 
+                value="Learn To Code" 
+                {{checkIfSelected dataValues.name 'Learn To Code'}}
+                >Learn To Code</option>
+              <option value="JavaScript For Web"
+                {{checkIfSelected dataValues.name 'JavaScript For Web'}}
+                >JavaScript For Web</option>
+              <option value="React.js"
+                {{checkIfSelected dataValues.name 'React.js'}}
+                >React.js</option>
+              <option value="Node.js"
+                {{checkIfSelected dataValues.name 'Node.js'}}
+                >Node.js</option>
+              <option value="Vue.js"
+                {{checkIfSelected dataValues.name 'Vue.js'}}
+                >Vue.js</option>
+              <option value="Databases"
+                {{checkIfSelected dataValues.name 'Databases'}}
+                >Databases</option>
             </select>
           </div>
         </div>
@@ -57,19 +74,19 @@
           <span>Hours total: &nbsp; {{dataValues.hours}}</span>
           <div class="input-group">
             <input type="number" name="hours" id="hours" class="input-box" placeholder="Edit" maxlength="100"
-              value={{hours}}>
+              value={{dataValues.hours}}>
           </div>
         </div>
         <div class="flex-between">
           <span>Start Date: &nbsp; {{dataValues.start_date}}</span>
           <div class="input-group">
-            <input type="date" name="start_date" id="start_date" class="input-box" value={{start_date}}>
+            <input type="date" name="start_date" id="start_date" class="input-box" value={{dataValues.start_date}}>
           </div>
         </div>
         <div class="flex-between">
           <span>End Date: &nbsp; {{dataValues.end_date}}</span>
           <div class="input-group">
-            <input type="date" name="end_date" id="end_date" class="input-box" value={{end_date}}>
+            <input type="date" name="end_date" id="end_date" class="input-box" value={{dataValues.end_date}}>
           </div>
         </div>
         <div class="flex-between">
@@ -80,19 +97,42 @@
           {{/if}}
           <div class="input-group">
             <select type="number" name="teacher_id" id="teacher_id" class="input-box">
-              <option value="" selected disabled hidden>Edit</option>
-              <option value="null">not determined yet</option>
-              <option value="2">Alexander Löhn</option>
-              <option value="5">Ansgar Mertens</option>
-              <option value="11">Benjamin Rabe</option>
-              <option value="7">Christoph Eicke</option>
-              <option value="1">Helder Pereira</option>
-              <option value="4">Jonas Reitmann</option>
-              <option value="8">Teresa Holfeld</option>
-              <option value="9">Thomas Hedeler</option>
-              <option value="10">Mary Vokicic</option>
-              <option value="3">Paul Anton</option>
-              <option value="6">Paul Mölders</option>
+              <option value="null"
+                {{checkIfSelected dataValues.Teacher.dataValues.name null}}
+                >not determined yet</option>
+              <option value="2"
+                {{checkIfSelected dataValues.Teacher.dataValues.name 'Alexander Löhn'}}
+                >Alexander Löhn</option>
+              <option value="5"
+                {{checkIfSelected dataValues.Teacher.dataValues.name 'Ansgar Mertens'}}
+                >Ansgar Mertens</option>
+              <option value="11"
+                {{checkIfSelected dataValues.Teacher.dataValues.name 'Benjamin Rabe'}}
+                >Benjamin Rabe</option>
+              <option value="7"
+                {{checkIfSelected dataValues.Teacher.dataValues.name 'Christoph Eicke'}}
+                >Christoph Eicke</option>
+              <option value="1"
+                {{checkIfSelected dataValues.Teacher.dataValues.name 'Helder Pereira'}}
+                >Helder Pereira</option>
+              <option value="4"
+                {{checkIfSelected dataValues.Teacher.dataValues.name 'Jonas Reitmann'}}
+                >Jonas Reitmann</option>
+              <option value="8"
+                {{checkIfSelected dataValues.Teacher.dataValues.name 'Teresa Holfeld'}}
+                >Teresa Holfeld</option>
+              <option value="9"
+                {{checkIfSelected dataValues.Teacher.dataValues.name 'Thomas Hedeler'}}
+                >Thomas Hedeler</option>
+              <option value="10"
+                {{checkIfSelected dataValues.Teacher.dataValues.name 'Mary Vokicic'}}
+                >Mary Vokicic</option>
+              <option value="3"
+                {{checkIfSelected dataValues.Teacher.dataValues.name 'Paul Anton'}}
+                >Paul Anton</option>
+              <option value="6"
+                {{checkIfSelected dataValues.Teacher.dataValues.name 'Paul Mölders'}}
+                >Paul Mölders</option>
             </select>
           </div>
         </div>
@@ -104,7 +144,7 @@
       </form>
     </div>
 
-    {{!-- CONFIRM OR CANCEL: DELETE --}}
+    {{!-- Display: 'CONFIRM OR CANCEL: DELETE' --}}
     <div id="deleteCourse{{dataValues.course_id}}" class="inactive confirm-delete">
       Delete this course from the database?
       <div class="buttons">
