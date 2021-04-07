@@ -7,7 +7,7 @@
   <div class="courses">
     <h3>Course: &nbsp; {{dataValues.name}}</h3>
     <span class="edit-btn" onclick="confirmDelete({{dataValues.course_id}})"><i class="far fa-edit"></i></span>
-    <span class="course_id">course_id: &nbsp; {{dataValues.course_id}}</span>
+    <span class="course_id">Course ID: &nbsp; {{dataValues.course_id}}</span>
     <ul>
       <li>start date: &nbsp; {{dataValues.start_date}}</li>
       <li>end date: &nbsp; {{dataValues.end_date}}</li>
@@ -152,7 +152,7 @@
 
     {{!-- Display: 'CONFIRM OR CANCEL: DELETE' --}}
     <div id="deleteCourse{{dataValues.course_id}}" class="inactive confirm-delete">
-      Delete this course from the database?
+      Delete course with <strong>ID:&nbsp;{{dataValues.course_id}}</strong> from the database?
       <div class="buttons">
         <button class="btn btn-reverse" onclick="cancelDelete({{dataValues.course_id}})">Cancel</button>
         <button class="btn btn-reverse" onclick="deleteCourse({{dataValues.course_id}})">Yes, delete this

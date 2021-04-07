@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Lato");
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
 
 :root {
   --primary-color: #568c9b;
@@ -33,6 +33,10 @@ a {
 
 a:hover {
   color: var(--primary-color);
+}
+
+strong {
+  font-weight: 900;
 }
 
 .container {
