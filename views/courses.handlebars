@@ -38,9 +38,11 @@
     {{!-- 'EDIT' DISPLAY --}}
     <div id="editCourse{{dataValues.course_id}}" class="inactive edit-course courses">
       <h2>Edit Course</h2>
+      <span>Course ID: &nbsp; {{dataValues.course_id}}</span>
       <form action="/courses/update" method="POST">
         <div class="flex-between">
-          <span>Course Name: &nbsp; {{dataValues.name}}</span>
+          <span>Course Name: </span>
+          {{!-- <span>Course Name: &nbsp; {{dataValues.name}}</span> --}}
           <div class="input-group">
             <select class="input-box" name="name" id="name">
               {{!-- <option value="" selected disabled hidden>Edit</option> --}}
@@ -71,30 +73,34 @@
           </div>
         </div>
         <div class="flex-between">
-          <span>Hours total: &nbsp; {{dataValues.hours}}</span>
+          <span>Hours Total: </span>
+          {{!-- <span>Hours total: &nbsp; {{dataValues.hours}}</span> --}}
           <div class="input-group">
             <input type="number" name="hours" id="hours" class="input-box" placeholder="Edit" maxlength="100"
               value={{dataValues.hours}}>
           </div>
         </div>
         <div class="flex-between">
-          <span>Start Date: &nbsp; {{dataValues.start_date}}</span>
+          <span>Start Date: </span>
+          {{!-- <span>Start Date: &nbsp; {{dataValues.start_date}}</span> --}}
           <div class="input-group">
             <input type="date" name="start_date" id="start_date" class="input-box" value={{dataValues.start_date}}>
           </div>
         </div>
         <div class="flex-between">
-          <span>End Date: &nbsp; {{dataValues.end_date}}</span>
+          <span>End Date: </span>
+          {{!-- <span>End Date: &nbsp; {{dataValues.end_date}}</span> --}}
           <div class="input-group">
             <input type="date" name="end_date" id="end_date" class="input-box" value={{dataValues.end_date}}>
           </div>
         </div>
         <div class="flex-between">
-          {{#if dataValues.Teacher.dataValues.name}}
+          <span>Teacher: </span>
+          {{!-- {{#if dataValues.Teacher.dataValues.name}}
           <span>Teacher: &nbsp; {{dataValues.Teacher.dataValues.name}}</span>
           {{else}}
           <span>Teacher: &nbsp; not determined yet</span>
-          {{/if}}
+          {{/if}} --}}
           <div class="input-group">
             <select type="number" name="teacher_id" id="teacher_id" class="input-box">
               <option value="null"
