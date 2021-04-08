@@ -56,7 +56,7 @@ router.post("/update", (req, res) => {
     { where: { course_id: course_id } }
   )
     .then(() => {
-      res.redirect("/courses");
+      res.redirect("/courses" + "?updated=" + course_id);
     })
     .catch((err) => console.log(err));
 });
