@@ -30,6 +30,7 @@ Pages:
 - edit
   - form is pre-filled with course data
   - all data is editable
+  - after editing: confirmation of update is displayed
 - delete
   - before deletion: confirmation requested
   - after deletion: confirmation of deletion is displayed

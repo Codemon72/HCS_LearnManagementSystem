@@ -35,7 +35,10 @@ if (idUpdatedX) {
   const divUpdateConfirm = document.getElementById(idUpdatedX);
   const confirmationSpan = document.createElement('span');
   confirmationSpan.className = 'update-confirmation';
-  confirmationSpan.innerText = 'Course was updated 👍';
+  confirmationSpan.innerText = 'Course was updated  👍';
   divUpdateConfirm.appendChild(confirmationSpan);
+  setTimeout(() => {
+    confirmationSpan.remove();
+  }, 4000);
   console.log(divUpdateConfirm)
 }
