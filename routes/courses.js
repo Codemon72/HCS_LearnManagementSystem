@@ -57,6 +57,7 @@ router.post("/update", (req, res) => {
   )
     .then(() => {
       res.redirect("/courses" + "?updated=" + course_id);
+      // res.redirect("/courses" + "#courseDiv" + course_id);
     })
     .catch((err) => console.log(err));
 });

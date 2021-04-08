@@ -11,13 +11,13 @@ const cancelUpdate = (id) => {
 };
 
 const showUpdateConfirmation = (course_id) => {
-  const divDeleteConfirm = document.getElementById("update-confirmation");
-  divDeleteConfirm.innerText = `Course with ID: ${course_id} was updated!`;
-  divDeleteConfirm.classList.remove("inactive");
-  divDeleteConfirm.classList.add("active");
+  const divUpdateConfirm = document.getElementById("update-confirmation");
+  divUpdateConfirm.innerText = `Course with ID: ${course_id} was updated!`;
+  divUpdateConfirm.classList.remove("inactive");
+  divUpdateConfirm.classList.add("active");
   setTimeout(() => {
-    divDeleteConfirm.classList.remove("active");
-    divDeleteConfirm.classList.add("inactive");
+    divUpdateConfirm.classList.remove("active");
+    divUpdateConfirm.classList.add("inactive");
   }, 4000);
 };
 
@@ -27,3 +27,8 @@ const idUpdated = new URLSearchParams(window.location.search).get('updated');
 if (idUpdated) {
   showUpdateConfirmation(idUpdated)
 };
+
+const idUpdatedX = window.location.href.split('#')[1];
+if (idUpdatedX) { 
+  console.log(idUpdatedX)
+}

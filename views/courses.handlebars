@@ -6,7 +6,7 @@
   <h2 id="update-confirmation" class="inactive delete-confirmation">text inserted by showDeleteConfirmation()</h2>
 
   {{#each courses}}
-  <div class="courses">
+  <div class="courses" id="courseDiv{{dataValues.course_id}}">
     <h3>Course: &nbsp; {{dataValues.name}}</h3>
     <span class="edit-btn" onclick="confirmDelete({{dataValues.course_id}})"><i class="far fa-edit"></i></span>
     <span class="course_id">Course ID: &nbsp; {{dataValues.course_id}}</span>
