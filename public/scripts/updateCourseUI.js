@@ -21,14 +21,7 @@ const showUpdateConfirmation = (course_id) => {
   }, 4000);
 };
 
-// check URL for the ID of an updated course
-const idUpdated = new URLSearchParams(window.location.search).get('updated');
-
-if (idUpdated) {
-  showUpdateConfirmation(idUpdated)
-};
-
-
+// check URL for direction to '#courseDivXX'
 const idUpdatedX = window.location.href.split('#')[1];
 
 if (idUpdatedX) { 
@@ -40,5 +33,4 @@ if (idUpdatedX) {
   setTimeout(() => {
     confirmationSpan.remove();
   }, 4000);
-  console.log(divUpdateConfirm)
 }
