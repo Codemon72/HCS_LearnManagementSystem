@@ -28,7 +28,14 @@ if (idUpdated) {
   showUpdateConfirmation(idUpdated)
 };
 
+
 const idUpdatedX = window.location.href.split('#')[1];
+
 if (idUpdatedX) { 
-  console.log(idUpdatedX)
+  const divUpdateConfirm = document.getElementById(idUpdatedX);
+  const confirmationSpan = document.createElement('span');
+  confirmationSpan.className = 'update-confirmation';
+  confirmationSpan.innerText = 'Course was updated 👍';
+  divUpdateConfirm.appendChild(confirmationSpan);
+  console.log(divUpdateConfirm)
 }

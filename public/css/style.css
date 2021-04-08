@@ -265,6 +265,12 @@ input[type="search"] {
   margin: 2.5rem 0 1rem;
   justify-content: space-between;
 }
+.update-confirmation {
+  position: absolute;
+  top: 1rem;
+  left: 20rem;
+  color: red;
+}
 
 .confirm-delete.active {
   position: absolute;
