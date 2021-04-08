@@ -26,9 +26,9 @@ const showDeleteConfirmation = (course_id) => {
 };
 
 // check URL for the ID of a deleted course
-let queryString = window.location.search; 
-let urlParams = new URLSearchParams(queryString); 
-const idDeleted = urlParams.get('deleted');
+// const queryString = window.location.search; 
+// const urlParams = new URLSearchParams(queryString); 
+const idDeleted = new URLSearchParams(window.location.search).get('deleted');
 
 if (idDeleted) {
   showDeleteConfirmation(idDeleted)

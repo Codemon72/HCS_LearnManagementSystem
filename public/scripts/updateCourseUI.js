@@ -22,8 +22,6 @@ const showUpdateConfirmation = (course_id) => {
 };
 
 // check URL for the ID of an updated course
-// let queryString = window.location.search; 
-// let urlParams = new URLSearchParams(queryString); 
 const idUpdated = new URLSearchParams(window.location.search).get('updated');
 
 if (idUpdated) {
