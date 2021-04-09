@@ -1,9 +1,10 @@
 work in progress: 
-# Project for Hamburg Coding School: Learning Management System
+# Project for Hamburg Coding School: Learning Management System (Node.js)
 
-In this Repo I am working on an App to fill and manage a database for courses, students and teachers for [Hamburg Coding School](https://hamburgcodingschool.com/).
-I started using a basic [tutorial from Brad Traversy](https://www.youtube.com/watch?v=bOHysWYMZM0&list=PLillGF-RfqbZyLc9sMQ72_u3FW9fVxo1p). 
-After modifications I am expanding its functionality.
+In this Repo I was working on an App to fill and manage a database for courses, students and teachers for [Hamburg Coding School](https://hamburgcodingschool.com/).
+I started using a basic [tutorial from Brad Traversy](https://www.youtube.com/watch?v=bOHysWYMZM0&list=PLillGF-RfqbZyLc9sMQ72_u3FW9fVxo1p), customized it and expanded it's functionalities.
+For scalibility (and fun 😉) I abandoned this project and started it with React. 
+
 
 ## Tech Stack
 - local Database with MariaDB
@@ -18,6 +19,7 @@ After modifications I am expanding its functionality.
 
 ## Features
 - Relational database for teachers, students, courses and course bookings of [Hamburg Coding School](https://hamburgcodingschool.com/).
+- CRUD functionality
 - intuitive and interactive interface
 
 Pages:
@@ -27,11 +29,11 @@ Pages:
 
 ### "All Courses"
 - listing all courses
-- edit
+- edit a course
   - form is pre-filled with course data
   - all data is editable
   - after editing: confirmation of update is displayed
-- delete
+- delete a course
   - before deletion: confirmation requested
   - after deletion: confirmation of deletion is displayed
 
