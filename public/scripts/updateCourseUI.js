@@ -21,11 +21,11 @@ const showUpdateConfirmation = (course_id) => {
   }, 4000);
 };
 
-// check URL for direction to '#courseDivXX'
-const idUpdatedX = window.location.href.split('#')[1];
+// check URL for direction to '#courseDiv..'
+const idUpdated = window.location.href.split('#')[1];
 
-if (idUpdatedX) { 
-  const divUpdateConfirm = document.getElementById(idUpdatedX);
+if (idUpdated) { 
+  const divUpdateConfirm = document.getElementById(idUpdated);
   const confirmationSpan = document.createElement('span');
   confirmationSpan.className = 'update-confirmation';
   confirmationSpan.innerText = 'Course was updated  👍';
