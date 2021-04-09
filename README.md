@@ -1,7 +1,6 @@
-work in progress: 
 # Project for Hamburg Coding School: Learning Management System (Node.js)
 
-In this Repo I was working on an App to fill and manage a database for courses, students and teachers for [Hamburg Coding School](https://hamburgcodingschool.com/).
+Project for an App to fill and manage a database for courses, students and teachers for [Hamburg Coding School](https://hamburgcodingschool.com/).
 I started using a basic [tutorial from Brad Traversy](https://www.youtube.com/watch?v=bOHysWYMZM0&list=PLillGF-RfqbZyLc9sMQ72_u3FW9fVxo1p), customized it and expanded it's functionalities.
 For scalibility (and fun 😉) I abandoned this project and started it with React. 
 
@@ -48,12 +47,15 @@ Pages:
 ![ERD - HAMBURG CODING SCHOOL LMS.png](/public/img/ERD-HAMBURG_CODING_SCHOOL_LMS.png)
 
 ### Home
-![Home-Page](/public/img/Home500.png)
+![Home-Page](/public/img/Home1000.png)
+
 ### Add A Course
-![Add A Course](/public/img/AddCourse500.png)
+![Add A Course](/public/img/AddCourse1000.png)
+
 ### Edit Course
-![Edit Course](/public/img/EditCourse500.png)
+![Edit Course](/public/img/EditCourse.png)
+
 ### Delete Course
-![Delete Course](/public/img/ConfirmDelete500.png)
+![Delete Course](/public/img/ConfirmDelete.png)
 
 &copy; 2021 - Clemens Bruesch
