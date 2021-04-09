@@ -47,4 +47,13 @@ Pages:
 ### Entity Relationship Diagram
 ![ERD - HAMBURG CODING SCHOOL LMS.png](/public/img/ERD-HAMBURG_CODING_SCHOOL_LMS.png)
 
+### Home
+![Home-Page](/public/img/Home500.png)
+### Add A Course
+![Add A Course](/public/img/AddCourse500.png)
+### Edit Course
+![Edit Course](/public/img/EditCourse500.png)
+### Delete Course
+![Delete Course](/public/img/ConfirmDelete500.png)
+
 &copy; 2021 - Clemens Bruesch
