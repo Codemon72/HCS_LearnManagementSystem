@@ -1,6 +1,8 @@
-start: nodemon app
+start: 
+`nodemon app`
 
 #### Database
+in terminal:
 check with: 
 - `brew services list`
 
@@ -8,10 +10,10 @@ start and stop with:
 - `brew services start mariadb`
 - `brew services stop mariadb`
 
-start in terminal:
+start:
 - `mariadb`
 
-stop in terminal:
+stop:
 - `\q` or CTRL + C
 
 #### Database UI: Sequel Ace
