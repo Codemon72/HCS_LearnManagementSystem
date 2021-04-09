@@ -47,10 +47,10 @@ Pages:
 ![ERD - HAMBURG CODING SCHOOL LMS.png](/public/img/ERD-HAMBURG_CODING_SCHOOL_LMS.png)
 
 ### Home
-![Home-Page](/public/img/Home1000.png)
+![Home-Page](/public/img/Home.png)
 
 ### Add A Course
-![Add A Course](/public/img/AddCourse1000.png)
+![Add A Course](/public/img/AddCourse.png)
 
 ### Edit Course
 ![Edit Course](/public/img/EditCourse.png)
