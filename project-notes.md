@@ -1,8 +1,9 @@
 start: 
-`nodemon app`
+- `nodemon app`
 
 #### Database
-in terminal:
+(in terminal) 
+
 check with: 
 - `brew services list`
 
