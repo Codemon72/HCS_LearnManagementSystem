@@ -2,7 +2,7 @@
 
 Project for an App to fill and manage a database for courses, students and teachers for [Hamburg Coding School](https://hamburgcodingschool.com/).
 I started using a basic [tutorial from Brad Traversy](https://www.youtube.com/watch?v=bOHysWYMZM0&list=PLillGF-RfqbZyLc9sMQ72_u3FW9fVxo1p), customized it and expanded it's functionalities.
-For scalibility (and fun 😉) I abandoned this project and started it with React. 
+For scalibility (and fun 😉) I abandoned this project and started it with React: [HCS_Learning-Management-System (React)](https://github.com/Codemon72/HCS_Learning-Management-System_with_React). 
 
 
 ## Tech Stack
