@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
 
 :root {
-  --primary-color: #568c9b;
-  --primary-hover-color: #64a5b7;
-  --primary-hover-color: #0E4E5B;
-  --custom-white: #f4f4f4; 
-  --bg-color: #333;
+  --color--blue: #568c9b;
+  --color--blue--hover: #0E4E5B;
+  --color-white: #f4f4f4; 
+  --color--warning: #9E0505;
+  --color--bg: #333;
   --box-shadow: 3px 4px 12px rgba(0, 0, 0, 0.7);
 }
 
@@ -17,8 +17,8 @@ body {
   font-family: "Lato", sans-serif;
   font-size: 18px;
   margin: 0;
-  color: #333;
-  background: #f4f4f4;
+  color: var(--color--bg);
+  background: var(--color-white);
 }
 
 ul {
@@ -32,7 +32,7 @@ a {
 }
 
 a:hover {
-  color: var(--primary-color);
+  color: var(--color--blue);
 }
 
 strong {
@@ -73,8 +73,8 @@ header nav li {
 }
 
 header.inner {
-  background: var(--bg-color);
-  border-bottom: 4px solid var(--primary-color);
+  background: var(--color--bg);
+  border-bottom: 4px solid var(--color--blue);
   position: relative;
   box-shadow: var(--box-shadow);
 }
@@ -91,31 +91,31 @@ header.inner {
 }
 
 .btn:hover {
-  background: var(--primary-color);
-  border: 1px solid var(--primary-color);
+  background: var(--color--blue);
+  border: 1px solid var(--color--blue);
   color: #fff;
 }
 
 .btn-reverse {
-  background: var(--primary-color);
-  border: 1px solid var(--primary-color);
+  background: var(--color--blue);
+  border: 1px solid var(--color--blue);
 }
 
 .btn-reverse:hover {
-  background: var(--primary-hover-color);
-  border: 1px solid var(--primary-hover-color);
+  background: var(--color--blue--hover);
+  border: 1px solid var(--color--blue--hover);
 }
 .button {
   color: #fff;
   padding: 0.6rem;
   border: 1px solid #ccc;
   transition: all 0.3s;
-  background: var(--primary-color);
-  border: 1px solid var(--primary-color);
+  background: var(--color--blue);
+  border: 1px solid var(--color--blue);
 }
 .button:hover {
-  background: var(--primary-hover-color);
-  border: 1px solid var(--primary-hover-color);
+  background: var(--color--blue--hover);
+  border: 1px solid var(--color--blue--hover);
 }
 
 /* Flex  */
@@ -149,8 +149,8 @@ header.inner {
 }
 
 .search-form input[type="submit"] {
-  background: var(--primary-color);
-  border: 1px solid var(--primary-color);
+  background: var(--color--blue);
+  border: 1px solid var(--color--blue);
   color: #fff;
   padding: 0 2rem;
   cursor: pointer;
@@ -158,8 +158,8 @@ header.inner {
 }
 
 .search-form input[type="submit"]:hover {
-  background: var(--primary-hover-color);
-  border: 1px solid var(--primary-hover-color);
+  background: var(--color--blue--hover);
+  border: 1px solid var(--color--blue--hover);
 }
 
 .search-form {
@@ -189,8 +189,8 @@ input[type="search"] {
 
 /* All Courses */
 .courses {
-  background: var(--bg-color);
-  border-bottom: 4px solid var(--primary-color);
+  background: var(--color--bg);
+  border-bottom: 4px solid var(--color--blue);
   color: #fff;
   padding: 1.5rem;
   margin-bottom: 1rem;
@@ -214,12 +214,6 @@ input[type="search"] {
   top: 31px;
   right: 1rem;
 }
-.edit-btn:hover,
-.edit-btn:focus {
-  cursor: pointer;
-  color: red;
-  background-color: #fff;
-}
 .edit-or-delete {
   display: none;
 }
@@ -234,8 +228,8 @@ input[type="search"] {
   width: 250px;
   padding: 1.5rem;
   border-radius: 3px;
-  background-color: var(--custom-white);
-  color: var(--bg-color);
+  background-color: var(--color-white);
+  color: var(--color--bg);
 }
 .edit-or-delete .flex-between + .flex-between {
   margin-top: 1rem;
@@ -269,7 +263,7 @@ input[type="search"] {
   position: absolute;
   top: 1rem;
   left: 20rem;
-  background-color: var(--custom-white);
+  background-color: var(--color-white);
   color: orangered;
   padding: .5rem 1rem;
 }
@@ -280,8 +274,8 @@ input[type="search"] {
   right: 14px;
   width: 330px;
   padding: 1.5rem;
-  background-color: var(--custom-white);
-  color: var(--bg-color);
+  background-color: var(--color-white);
+  color: var(--color--bg);
   outline: 4px solid orangered;
 }
 .confirm-delete.inactive {
@@ -294,12 +288,12 @@ input[type="search"] {
 }
 .active.delete-confirmation {
   position: absolute;
-  border: 2px solid rgb(158, 5, 5);
+  border: 2px solid var(--color--warning);
   top: 5rem;
   left: 50%;
   transform: translateX(-50%);
   padding: 1.5rem;
-  background-color: var(--custom-white);
+  background-color: var(--color-white);
 }
 .inactive.delete-confirmation {
   display: none;
@@ -312,11 +306,11 @@ input[type="search"] {
 /* FORM */
 .form-wrap {
   margin: auto;
-  background: var(--bg-color);
+  background: var(--color--bg);
   color: #fff;
   padding: 1rem 3rem 3rem;
   margin-top: 3rem;
-  border-bottom: 4px solid var(--primary-color);
+  border-bottom: 4px solid var(--color--blue);
   box-shadow: var(--box-shadow);
 }
 
@@ -368,7 +362,7 @@ label {
   background-color: white;
   border-radius: 2px;
   padding: 2px;
-  color: rgb(158, 5, 5);
+  color: var(--color--warning);
   font-size: .85rem;
   bottom: 8px;
   left: 10px;
