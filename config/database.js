@@ -37,6 +37,8 @@ module.exports = new Sequelize('codingschool', 'clemens', '', {
 // }
 // };
 
+// asyncFunction();
+
 // async function logAllCourses () {
 // let conn;
 // try {
@@ -49,8 +51,6 @@ module.exports = new Sequelize('codingschool', 'clemens', '', {
 //  if (conn) return conn.end();
 // }
 // };
-
-// asyncFunction();
 
 // logAllCourses();
 

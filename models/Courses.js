@@ -32,13 +32,7 @@ const Courses = db.define('Courses', {
   freezeTableName: true
 });
 
-// From the Docs: 
+
 Courses.belongsTo(Teachers, {foreignKey: 'teacher_id'});
-
-
-// From Thomas Smith's Tutorials:
-// Courses.associate = (models) => {
-//   Courses.hasOne(models.Teachers, {foreignKey: 'teacher_id'})
-// };
 
 module.exports = Courses;
